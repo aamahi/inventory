@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','Admin\Home@index')->name('home');
+Route::get('/admin','Admin\Home@index')->name('home');
 
 Auth::routes();
 
