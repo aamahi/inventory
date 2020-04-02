@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//        Admin Route
+Route::get('/',function (){ return redirect()->route('home'); });
 Route::get('/admin','Admin\Home@index')->name('home');
 
+
+//          Auth Route
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('hme');
