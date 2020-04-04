@@ -16,7 +16,11 @@ class Employe extends Controller
 //        return $request->all();
         $photo = $request->file('image');
         $photo_extension = $photo->getClientOriginalExtension();
-        $photo_name = "employe_no_".date('Ymd_h_is').rand(1,9).".".$photo_extension;
-        echo $photo_name;
+        $photo_name = "employe_no_".date('Ymd_h_is').rand(1,9);
+        $image = $photo_name.".".$photo_extension;
+        if($photo->isValid()){
+            $photo->storeAs('Employe',$image);
+        }
+        return redirect()->back();
     }
 }
