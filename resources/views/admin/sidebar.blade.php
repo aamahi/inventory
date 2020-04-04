@@ -8,7 +8,15 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-users"></i>
+                    <span>Employe</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="{{route('add_employe')}}">Add Employe</a></li>
+                </ul>
+            </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-laptop"></i>

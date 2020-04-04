@@ -220,7 +220,7 @@
             <!-- user login dropdown start-->
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <img alt="" src="{{asset('asset/img/avatar1_small.jpg')}}">
+                    <img alt="" src="{{asset('mahi.jpg')}}">
                     <span class="username"> {{Auth::User()->name}}</span>
                     <b class="caret"></b>
                 </a>

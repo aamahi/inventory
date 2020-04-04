@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 //        Admin Route
 Route::get('/',function (){ return redirect()->route('home'); });
 Route::get('/admin','Admin\Home@index')->name('home');
-
+Route::get('/add/employe','Admin\Employe@add_employe')->name('add_employe');
 
 //          Auth Route
 Auth::routes();
