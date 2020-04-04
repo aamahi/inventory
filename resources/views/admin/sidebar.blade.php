@@ -14,7 +14,7 @@
                     <span>Employe</span>
                 </a>
                 <ul class="sub">
-                    <li><a  href="{{route('add_employe')}}">Add Employe</a></li>
+                    <li><a  href="{{route('employe')}}">Add Employe</a></li>
                 </ul>
             </li>
             <li class="sub-menu">

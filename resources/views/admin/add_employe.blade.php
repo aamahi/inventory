@@ -5,11 +5,23 @@
         <section class="wrapper">
             <!--state overview start-->
             <section class="card">
+
                 <header class="card-header text-center bg-info text-light">
                     Add Employe
                 </header>
+                <br>
+                @if($errors->any())
+                    @foreach($errors->all() as $error)
+                    <div class="alert alert-danger alert-dismissible fade show col-md-10 offset-md-1" role="alert">
+                       {{$error}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endforeach
+                @endif
                 <div class="card-body">
-                    <form class="form-horizontal tasi-form" action="" method="post">
+                    <form class="form-horizontal tasi-form" action="{{route('employe')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label class="col-sm-2 col-sm-2 control-label" for="name">Name</label>
