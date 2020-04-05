@@ -19,7 +19,7 @@ class Employe extends Controller
         $photo_name = "employe_no_".date('Ymd_h_is').rand(1,9);
         $image = $photo_name.".".$photo_extension;
         if($photo->isValid()){
-            $photo->storeAs('Employe',$image);
+            $photo->storeAs('employe',$image);
         }
         return redirect()->back();
     }

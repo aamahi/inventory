@@ -50,8 +50,8 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path('Employe'),
-            'url' => env('APP_URL').'Employe',
+            'root' => public_path('uploads'),
+            'url' => env('APP_URL').'uploads',
             'visibility' => 'public',
         ],
 
@@ -61,7 +61,7 @@ return [
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
-            'endpoint' => env('AWS_URL'),
+            'url' => env('AWS_URL'),
         ],
 
     ],

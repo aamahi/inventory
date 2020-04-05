@@ -74,7 +74,8 @@
                 <input type="radio" name="sections" id="option2">
                 <label for="option2" class="icon-left-w3pvt"><span class="fa fa-pencil-square" aria-hidden="true"></span>Register</label>
                 <article>
-                    <form action="#" method="post">
+                    <form action="{{route('register')}}" method="post">
+                        @csrf
 {{--                        <h3 class="legend">Register Here</h3>--}}
                         <div class="input">
                             <span class="fa fa-user-o" aria-hidden="true"></span>
@@ -90,7 +91,7 @@
                         </div>
                         <div class="input">
                             <span class="fa fa-key" aria-hidden="true"></span>
-                            <input type="password" placeholder="Confirm Password" name="password" required />
+                            <input type="password" placeholder="Confirm Password" name="password_confirmation" required />
                         </div>
                         <button type="submit" class="btn submit">Register</button>
                     </form>
