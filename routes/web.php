@@ -19,6 +19,7 @@ Route::get('/admin','Admin\Home@index')->name('home');
 //      Employe Route
 Route::get('/add/employe','Admin\Employe@add_employe')->name('employe');
 Route::post('/add/employe','Admin\Employe@add_employe_process');
+Route::get('/employe','Admin\Employe@all_employe')->name('all_employe');
 
 //          Auth Route
 Auth::routes();

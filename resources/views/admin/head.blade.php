@@ -8,7 +8,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     {{--    <link rel="shortcut icon" href="{{asset('asset/img/favicon.html')}}">--}}
 
-    <title>FlatLab - Flat & Responsive Bootstrap Admin Template</title>
+    <title>Inventory Management system</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('asset/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -18,7 +18,9 @@
     <link href="{{asset('asset/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css')}}" rel="stylesheet" type="text/css" media="screen"/>
     <link rel="stylesheet" href="{{asset('asset/css/owl.carousel.css')}}" type="text/css">
 {{--')}}--}}
-<!--right slidebar-->
+    <!--toastr-->
+    <link href="{{asset('asset/assets/toastr-master/toastr.css')}}" rel="stylesheet" type="text/css" />
+    <!--right slidebar-->
     <link href="{{asset('asset/css/slidebars.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->

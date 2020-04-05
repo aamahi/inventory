@@ -26,11 +26,17 @@ class EmployeRequest extends FormRequest
         return [
             'name' =>'required',
             'position'=>'required',
-            'email'=>'required|email',
+            'email'=>'required|email|unique:empolyes,email',
             'phone'=>'required | size:11',
-            'salary'=>'required',
+            'salary'=>'required|min:4|max:6',
             'address'=>'required',
             'image'=>'required|image',
         ];
+    }
+    protected function formatErrors(Validator $validator)
+    {
+        Toastr::error('Your Error Message', 'failed');
+
+        return $validator->errors()->all();
     }
 }
