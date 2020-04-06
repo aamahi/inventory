@@ -46,7 +46,7 @@ class Employe extends Controller
             }
         }
 
-        return redirect()->back()->with($notification);
+        return redirect()->route('all_employe')->with($notification);
     }
     public function all_employe(){
         $employes = Empolye::all();
@@ -61,8 +61,18 @@ class Employe extends Controller
         return $request->all();
     }
 
-    public function delete_update($id){
-        echo $id;
+    public function delete_employe($id)
+    {
+        $delete = Empolye::findOrFail($id);
+        unlink('Uploads/employe/'.$delete->image);
+        $u = $delete->delete();
+        if ($u) {
+            $notification = array(
+                'message' => "Employe Deleted Successfully",
+                'alert-type' => 'error'
+            );
+            return redirect()->route('all_employe')->with($notification);
+        }
     }
 }
 
