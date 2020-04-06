@@ -4,7 +4,7 @@
     <section id="main-content">
         <section class="wrapper">
             <section class="card">
-                <header class="card-header bg-info text-center">
+                <header class="card-header bg-info text-center text-light">
                    Employe Information
                 </header>
                 <div class="card-body">
@@ -16,26 +16,20 @@
                                 <th>Name</th>
                                 <th>Position</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Salary</th>
-                                <th>Address</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($employes as $employe)
                             <tr>
-                                <th>{{$employe->image}}</th>
+                                <th><img src="{{asset('Uploads/employe/'.$employe->image)}}" width="65px;" alt=""></th>
                                 <th>{{$employe->name}}</th>
                                 <th>{{$employe->position}}</th>
                                 <th>{{$employe->email}}</th>
-                                <th>{{$employe->phone}}</th>
-                                <th>{{$employe->salary}}</th>
-                                <th>{{$employe->address}}</th>
                                 <th>
-                                    <a href="" class="btn btn-sm btn-danger">Hi</a> <hr>
-                                    <a href="" class="btn btn-sm btn-danger">Hi</a><hr>
-                                    <a href="" class="btn btn-sm btn-danger">Hi</a>
+                                    <a href=""  class="btn btn-md btn-success" data-toggle="modal" data-target="#myModal2"> <i class="fa fa-eye"> </i> </a>
+                                    <a href="" class="btn btn-md btn-info"> <i class="fa fa-pencil-square-o"> </i> </a>
+                                    <a href="" class="btn btn-md btn-danger"> <i class="fa fa-trash-o"> </i> </a>
                                 </th>
                             </tr>
                             @endforeach
@@ -46,4 +40,23 @@
 
         </section>
     </section>
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModal2">Employe Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
