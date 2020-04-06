@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EmployeRequest;
+use App\Http\Requests\UpdateEmployeRequest;
 use App\Model\Empolye;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class Employe extends Controller
     }
 
     public function add_employe(){
-        return view('admin.add_employe');
+        return view('admin.employe.add_employe');
     }
     public function add_employe_process(EmployeRequest $request){
 //        $image
@@ -49,6 +50,20 @@ class Employe extends Controller
     }
     public function all_employe(){
         $employes = Empolye::all();
-        return view('admin.all_employe',compact('employes'));
+        return view('admin.employe.all_employe',compact('employes'));
+    }
+
+    public function update_employe($id){
+        $employe_info = Empolye::find($id);
+        return view('admin.employe.update_employe',compact('employe_info'));
+    }
+    public function update_employe_pro(UpdateEmployeRequest $request,$id){
+        return $request->all();
+    }
+
+    public function delete_update($id){
+        echo $id;
     }
 }
+
+

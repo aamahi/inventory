@@ -27,9 +27,9 @@
                                 <th>{{$employe->position}}</th>
                                 <th>{{$employe->email}}</th>
                                 <th>
-                                    <a href=""  class="btn btn-md btn-success" data-toggle="modal" data-target="#myModal2"> <i class="fa fa-eye"> </i> </a>
-                                    <a href="" class="btn btn-md btn-info"> <i class="fa fa-pencil-square-o"> </i> </a>
-                                    <a href="" class="btn btn-md btn-danger"> <i class="fa fa-trash-o"> </i> </a>
+                                    <a href=""  class="btn btn-md btn-success" data-toggle="modal" data-target="#myModal2" data-email="{{$employe->email }}" data-username="{{ $employe->name }}"> <i class="fa fa-eye"> </i> </a>
+                                    <a href="{{route('update_employe',$employe->id)}}" class="btn btn-md btn-info"> <i class="fa fa-pencil-square-o"> </i> </a>
+                                    <a href="{{route('delete_update',$employe->id)}}" class="btn btn-md btn-danger"> <i class="fa fa-trash-o"> </i> </a>
                                 </th>
                             </tr>
                             @endforeach
@@ -50,7 +50,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+{{--                   {{$employes}}--}}
+                    Bal hosse na
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
