@@ -20,7 +20,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($employes as $employe)
+                            @forelse($employes as $employe)
                             <tr>
                                 <th><img src="{{asset('Uploads/employe/'.$employe->image)}}" width="65px;" alt=""></th>
                                 <th>{{$employe->name}}</th>
@@ -32,7 +32,11 @@
                                     <a href="{{route('delete_update',$employe->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> </a>
                                 </th>
                             </tr>
-                            @endforeach
+                                @empty
+                                <tr class="bg-light">
+                                    <td colspan="50" class="text-center text-dark"> No Employe Found !</td>
+                                </tr>
+                            @endforelse
                         </table>
                     </div>
                 </div>
