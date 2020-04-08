@@ -13,6 +13,7 @@
 
 <!--right slidebar-->
 <script src="{{asset('asset/js/slidebars.min.js')}}"></script>
+
 <script src="{{asset('asset/assets/toastr-master/toastr.js')}}"></script>
 <!--common script for all pages-->
 <script src="{{asset('asset/js/common-scripts5e1f.js')}}?v=2"></script>
@@ -23,7 +24,6 @@
 <script src="{{asset('asset/js/count.js')}}"></script>
 
 <script>
-
         @if(Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}";
             switch(type){
