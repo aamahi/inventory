@@ -17,12 +17,27 @@
 <script src="{{asset('asset/assets/toastr-master/toastr.js')}}"></script>
 <!--common script for all pages-->
 <script src="{{asset('asset/js/common-scripts5e1f.js')}}?v=2"></script>
-
+{{--Sweetalert--}}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!--script for this page-->
 <script src="{{asset('asset/js/sparkline-chart.js')}}"></script>
 <script src="{{asset('asset/js/easy-pie-chart.js')}}"></script>
 <script src="{{asset('asset/js/count.js')}}"></script>
-
+<script !src="">
+    $('.delete').on('click', function (event) {
+        event.preventDefault();
+        const url = $(this).attr('href');
+        swal({
+            title: 'Are you sure want to delete?',
+            icon: 'warning',
+            buttons: ["Cancel", "Yes!"],
+        }).then(function(value) {
+            if (value) {
+                window.location.href = url;
+            }
+        });
+    });
+</script>
 <script>
         @if(Session::has('message'))
             var type = "{{ Session::get('alert-type', 'info') }}";

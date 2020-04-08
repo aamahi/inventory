@@ -64,7 +64,7 @@
                             <input type="password" placeholder="Password" name="password" required />
                         </div>
                         <button type="submit" class="btn submit">Login</button>
-                        <a href="#" class="bottom-text-w3ls">Forgot Password?</a>
+                        <a href="{{URL('password/reset')}}" class="bottom-text-w3ls">Forgot Password?</a>
                     </form>
                 </article>
             </div>
