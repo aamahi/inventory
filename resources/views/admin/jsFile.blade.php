@@ -45,6 +45,9 @@
                 case 'info':
                     toastr.info("{{ Session::get('message') }}");
                     break;
+                case 'primary':
+                    toastr.info("{{ Session::get('message') }}");
+                    break;
 
                 case 'warning':
                     toastr.warning("{{ Session::get('message') }}");

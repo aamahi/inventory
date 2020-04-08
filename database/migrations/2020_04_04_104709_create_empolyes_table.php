@@ -23,6 +23,8 @@ class CreateEmpolyesTable extends Migration
             $table->string('address',300);
             $table->string('image');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

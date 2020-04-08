@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\EmployeRequest;
 use App\Http\Requests\UpdateEmployeRequest;
 use App\Model\Empolye;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class Employe extends Controller
@@ -33,6 +34,7 @@ class Employe extends Controller
         $data['phone']= $request->phone;
         $data['address']= $request->address;
         $data['image']= $image;
+        $data['created_at']= Carbon::now();
 //        print_r($data);
 
         if($photo->isValid()){
@@ -64,7 +66,7 @@ class Employe extends Controller
     public function delete_employe($id)
     {
         $delete = Empolye::findOrFail($id);
-        unlink('Uploads/employe/'.$delete->image);
+//        unlink('Uploads/employe/'.$delete->image);
         $u = $delete->delete();
         if ($u) {
             $notification = array(
@@ -74,6 +76,34 @@ class Employe extends Controller
             return redirect()->route('all_employe')->with($notification);
         }
     }
+
+    public function deleted_employe(){
+        $deleted_employes = Empolye::onlyTrashed()->get();
+        return view('admin.employe.deleted_employe',compact('deleted_employes'));
+    }
+    public function restore($id){
+       $restore =  Empolye::withTrashed()->find($id)->restore();
+        if ($restore) {
+            $notification = array(
+                'message' => "Employe Back Successfully",
+                'alert-type' => 'primary'
+            );
+            return redirect()->route('all_employe')->with($notification);
+        }
+    }
+    public function deleteF($id){
+        $deleteF= Empolye::onlyTrashed()->find($id);
+        unlink('Uploads/employe/'.$deleteF->image);
+        $deleteF->forceDelete();
+        if ($deleteF) {
+            $notification = array(
+                'message' => "Employe Deleted Successfully Lifetime",
+                'alert-type' => 'error'
+            );
+            return redirect()->route('deleted_employe')->with($notification);
+        }
+    }
 }
+
 
 
