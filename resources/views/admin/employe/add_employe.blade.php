@@ -14,12 +14,6 @@
                     @foreach($errors->all() as $error)
                     <div class="alert alert-danger alert-dismissible fade show col-md-10 offset-md-1" role="alert">
                        {{$error}}
-{{--                                {{--}}
-{{--                                array(--}}
-{{--                                'message' => "Employe Added Successfully",--}}
-{{--                                'alert-type' => 'success'--}}
-{{--                                )--}}
-{{--                                }}--}}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

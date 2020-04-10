@@ -17,12 +17,17 @@
     <link href="{{asset('asset/assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
     <link href="{{asset('asset/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css')}}" rel="stylesheet" type="text/css" media="screen"/>
     <link rel="stylesheet" href="{{asset('asset/css/owl.carousel.css')}}" type="text/css">
-{{--')}}--}}
+{{--    daynamik table--}}
+    <link href="{{asset('asset/assets/advanced-datatable/media/css/demo_page.css')}}" rel="stylesheet" />
+    <link href="{{asset('asset/advanced-datatabledatatable/media/css/demo_table.css')}}" rel="stylesheet" />
+    <link href="{{asset('asset/assets/data-tables/DT_bootstrap.css')}}" rel="stylesheet" />
+
     <!--toastr-->
     <link href="{{asset('asset/assets/toastr-master/toastr.css')}}" rel="stylesheet" type="text/css" />
     <!--right slidebar-->
     <link href="{{asset('asset/css/slidebars.css')}}" rel="stylesheet">
-
+{{--    datatable--}}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <!-- Custom styles for this template -->
 
     <link href="{{asset('asset/css/style.css')}}" rel="stylesheet">

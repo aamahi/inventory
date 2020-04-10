@@ -22,7 +22,7 @@
                     @endforeach
                 @endif
                 <div class="card-body">
-                    <form class="form-horizontal tasi-form" action="{{route('employe')}}" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal tasi-form" action="{{route('add_customar')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label class="col-sm-2 col-sm-2 control-label" for="position">Customar Group Name</label>
@@ -37,7 +37,7 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-sm-2 control-label" for="name">Customar Name</label>
                             <div class="col-sm-10">
-                                <input class="form-control" id="name" name="name" type="text" placeholder="Employe Name" value="{{old('name')}}">
+                                <input class="form-control" id="name" name="customar_name" type="text" placeholder="Customar Name" value="{{old('customar_name')}}">
                             </div>
                         </div>
 
@@ -60,15 +60,15 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-sm-2 control-label" for="image">Image</label>
+                            <label class="col-sm-2 col-sm-2 control-label" for="image">Photo</label>
                             <div class="col-sm-10">
-                                <input class="form-control" id="image" name="image" type="file">
+                                <input class="form-control" id="image" name="photo" type="file">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-sm-2 control-label"></label>
                             <div class="col-sm-3">
-                                <input class="btn btn-info btn-md" type="submit" value="Add Employe">
+                                <input class="btn btn-info btn-md" type="submit" value="Add Customar">
                             </div>
                         </div>
                     </form>

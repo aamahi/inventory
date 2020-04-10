@@ -10,6 +10,10 @@
 <script src="{{asset('asset/js/owl.carousel.js')}}" ></script>
 <script src="{{asset('asset/js/jquery.customSelect.min.js')}}" ></script>
 <script src="{{asset('asset/js/respond.min.js')}}" ></script>
+{{--datatable--}}
+<script src="{{asset('asset/assets/advanced-datatable/media/js/jquery.dataTables.js')}}"></script>
+<script src="{{asset('asset/assets/data-tables/DT_bootstrap.js')}}"></script>
+<script src="{{asset('asset/js/dynamic_table_init.js')}}"></script>
 
 <!--right slidebar-->
 <script src="{{asset('asset/js/slidebars.min.js')}}"></script>
@@ -19,6 +23,8 @@
 <script src="{{asset('asset/js/common-scripts5e1f.js')}}?v=2"></script>
 {{--Sweetalert--}}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{{--datatable js--}}
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <!--script for this page-->
 <script src="{{asset('asset/js/sparkline-chart.js')}}"></script>
 <script src="{{asset('asset/js/easy-pie-chart.js')}}"></script>
@@ -75,6 +81,10 @@
 
         });
     });
+
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
 
     //custom select box
 
