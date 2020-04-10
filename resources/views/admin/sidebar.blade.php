@@ -21,6 +21,17 @@
             </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
+                    <i class="fa fa-address-card"></i>
+                    <span>Customar</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="{{route('add_customar')}}">Add Customar</a></li>
+                    <li><a  href="{{route('all_customar')}}">All Customar</a></li>
+                    <li><a  href="{{route('add_customar')}}">Deleted Customar</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;" >
                     <i class="fa fa-laptop"></i>
                     <span>Layouts</span>
                 </a>

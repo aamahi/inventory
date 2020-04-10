@@ -30,6 +30,20 @@ Route::get('/deleted_employe','Admin\Employe@deleted_employe')->name('deleted_em
 Route::get('/deleteF/{id}','Admin\Employe@deleteF')->name('deleteF');
 Route::get('/restore/{id}','Admin\Employe@restore')->name('restore');
 
+//      Customar Route
+Route::get('/add/customar','Admin\Customar@add_customar')->name('add_customar');
+Route::post('/add/customar','Admin\Customar@add_customar_process');
+Route::get('/customar','Admin\Customar@all_customar')->name('all_customar');
+
+//Route::get('/update/employe/{id}','Admin\Employe@update_employe')->name('update_employe');
+//Route::post('/update/employe/{id}','Admin\Employe@update_employe_pro');
+//Route::get('/show/employe/{id}','Admin\Employe@show_employe')->name('show_employe');
+//
+//Route::get('/delete/employe/{id}','Admin\Employe@delete_employe')->name('delete_update');
+//Route::get('/deleted_employe','Admin\Employe@deleted_employe')->name('deleted_employe');
+//Route::get('/deleteF/{id}','Admin\Employe@deleteF')->name('deleteF');
+//Route::get('/restore/{id}','Admin\Employe@restore')->name('restore');
+
 //          Auth Route
 Auth::routes();
 
