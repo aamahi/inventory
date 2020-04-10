@@ -6,8 +6,9 @@
             <!--state overview start-->
             <section class="card">
 
-                <header class="card-header text-center bg-info text-light">
-                    Add Employe
+                <header class="card-header text-center bg-info text-light d-flex justify-content-between align-items-center">
+                    Add Customar
+                    <a href="{{route('customar_group')}}" class="btn btn-success"> Add Customar Group </a>
                 </header>
                 <br>
                 @if($errors->any())

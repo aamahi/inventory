@@ -25,6 +25,7 @@
                     <span>Customar</span>
                 </a>
                 <ul class="sub">
+                    <li><a  href="{{route('customar_group')}}">Customar Group</a></li>
                     <li><a  href="{{route('add_customar')}}">Add Customar</a></li>
                     <li><a  href="{{route('all_customar')}}">All Customar</a></li>
                     <li><a  href="{{route('add_customar')}}">Deleted Customar</a></li>

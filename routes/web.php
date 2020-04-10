@@ -34,6 +34,9 @@ Route::get('/restore/{id}','Admin\Employe@restore')->name('restore');
 Route::get('/add/customar','Admin\Customar@add_customar')->name('add_customar');
 Route::post('/add/customar','Admin\Customar@add_customar_process');
 Route::get('/customar','Admin\Customar@all_customar')->name('all_customar');
+Route::get('/customar_group','Admin\Customar@customar_group')->name('customar_group');
+Route::post('/customar_group','Admin\Customar@customar_group_add');
+Route::get('/delete_customar_group/{id}','Admin\Customar@delete_customar_group')->name('delete_customar_group');
 
 //Route::get('/update/employe/{id}','Admin\Employe@update_employe')->name('update_employe');
 //Route::post('/update/employe/{id}','Admin\Employe@update_employe_pro');
