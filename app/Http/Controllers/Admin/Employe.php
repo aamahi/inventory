@@ -56,11 +56,18 @@ class Employe extends Controller
     }
 
     public function update_employe($id){
-        $employe_info = Empolye::find($id);
-        return view('admin.employe.update_employe',compact('employe_info'));
+        $notification = array(
+            'message' => "Employe Updated Unavilable sometime",
+            'alert-type' => 'error'
+        );
+        return redirect()->back()->with($notification);
+//        $employe_info = Empolye::find($id);
+//        return view('admin.employe.update_employe',compact('employe_info'));
     }
     public function update_employe_pro(UpdateEmployeRequest $request,$id){
-        return $request->all();
+        return redirect()->back();
+//        return $request->all();
+//        return $request->file('image')->getClientOriginalName();
     }
 
     public function delete_employe($id)
@@ -102,6 +109,12 @@ class Employe extends Controller
             );
             return redirect()->route('deleted_employe')->with($notification);
         }
+    }
+
+
+    public function show_employe($id){
+        $employe_info  = Empolye::find($id);
+        return view('admin.employe.show_employe',compact('employe_info'));
     }
 }
 

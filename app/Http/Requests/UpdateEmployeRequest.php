@@ -26,7 +26,7 @@ class UpdateEmployeRequest extends FormRequest
         return [
             'name' =>'required',
             'position'=>'required',
-            'email'=>'required|email|unique:empolyes,email'.'$this->employe->3',
+//            'email'=>'required|email|unique:empolyes,email'.$id,
             'phone'=>'required | size:11',
             'salary'=>'required|min:4|max:6',
             'address'=>'required',

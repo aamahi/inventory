@@ -34,12 +34,12 @@
                                 <input class="form-control" id="position" name="position" type="text" placeholder="Postion" value="{{$employe_info->position}}">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-sm-2 control-label" for="email">Email</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="email" name="email" type="email" placeholder="Email Address" value="{{$employe_info->email}}">
-                            </div>
-                        </div>
+{{--                        <div class="form-group row">--}}
+{{--                            <label class="col-sm-2 col-sm-2 control-label" for="email">Email</label>--}}
+{{--                            <div class="col-sm-10">--}}
+{{--                                <input class="form-control" id="email" name="email" type="email" placeholder="Email Address" value="{{$employe_info->email}}">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="form-group row">
                             <label class="col-sm-2 col-sm-2 control-label" for="phone">Phone</label>
                             <div class="col-sm-10">
