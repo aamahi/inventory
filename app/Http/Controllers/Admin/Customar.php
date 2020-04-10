@@ -40,6 +40,7 @@ class Customar extends Controller
 
     //Add Customar
     public function add_customar(){
-        return view('admin.customar.add_customar');
+        $customar_group = Customar_group::select('id','customar_group_name')->get();
+        return view('admin.customar.add_customar',compact('customar_group'));
     }
 }

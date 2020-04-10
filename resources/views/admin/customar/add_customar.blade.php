@@ -15,12 +15,6 @@
                     @foreach($errors->all() as $error)
                     <div class="alert alert-danger alert-dismissible fade show col-md-10 offset-md-1" role="alert">
                        {{$error}}
-{{--                                {{--}}
-{{--                                array(--}}
-{{--                                'message' => "Employe Added Successfully",--}}
-{{--                                'alert-type' => 'success'--}}
-{{--                                )--}}
-{{--                                }}--}}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -31,17 +25,22 @@
                     <form class="form-horizontal tasi-form" action="{{route('employe')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
-                            <label class="col-sm-2 col-sm-2 control-label" for="name">Name</label>
+                            <label class="col-sm-2 col-sm-2 control-label" for="position">Customar Group Name</label>
+                            <div class="col-sm-10">
+                                <select name="customar_group_id" class="form-control">
+                                    @foreach($customar_group as $customar_group_name)
+                                    <option value="{{$customar_group_name->id}}">{{$customar_group_name->customar_group_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-sm-2 control-label" for="name">Customar Name</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="name" name="name" type="text" placeholder="Employe Name" value="{{old('name')}}">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-sm-2 control-label" for="position">Position</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="position" name="position" type="text" placeholder="Postion" value="{{old('position')}}">
-                            </div>
-                        </div>
+
                         <div class="form-group row">
                             <label class="col-sm-2 col-sm-2 control-label" for="email">Email</label>
                             <div class="col-sm-10">
@@ -52,12 +51,6 @@
                             <label class="col-sm-2 col-sm-2 control-label" for="phone">Phone</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="phone" name="phone" type="number" placeholder="Phone number" value="{{old('phone')}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-sm-2 control-label" for="salary">Salary</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="salary" name="salary" type="number" placeholder="Salary" value="{{old('salary')}}">
                             </div>
                         </div>
                         <div class="form-group row">
