@@ -12,7 +12,6 @@
                         </header>
                         <div class="card-body">
                             <table class="table table-bordered">
-                                <caption>List of Customar group name</caption>
                                 <thead>
                                 <tr>
                                     <th scope="col">ID</th>
@@ -21,7 +20,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($customar_group as $group)
+                                @forelse($customar_group as $group)
                                 <tr>
                                     <td>{{$group->id}}</td>
                                     <td>{{$group->customar_group_name}}</td>
@@ -29,7 +28,12 @@
                                         <a href="{{route('delete_customar_group',$group->id)}}" class="btn btn-danger"> Delete </a>
                                     </td>
                                 </tr>
-                                @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="30" class="text-center text-dark">No Customar Group found</td>
+                                        </tr>
+
+                                @endforelse
                                 </tbody>
                             </table>
                         </div>

@@ -43,10 +43,10 @@ Route::get('/delete_customar_group/{id}','Admin\Customar@delete_customar_group')
 //Route::post('/update/employe/{id}','Admin\Employe@update_employe_pro');
 Route::get('/show/customar/{id}','Admin\Customar@show_customar')->name('show_customar');
 //
-//Route::get('/delete/employe/{id}','Admin\Employe@delete_employe')->name('delete_update');
-//Route::get('/deleted_employe','Admin\Employe@deleted_employe')->name('deleted_employe');
-//Route::get('/deleteF/{id}','Admin\Employe@deleteF')->name('deleteF');
-//Route::get('/restore/{id}','Admin\Employe@restore')->name('restore');
+Route::get('/delete/customar/{id}','Admin\Customar@delete_customar')->name('delete_customar');
+Route::get('/deleted_customar','Admin\Customar@deleted_customar')->name('h_deleted');
+Route::get('/h_delete_customar/{id}','Admin\Customar@deleteF')->name('customar_delete_h');
+Route::get('/restore_customar/{id}','Admin\Customar@restore')->name('restore_customar');
 
 //          Auth Route
 Auth::routes();

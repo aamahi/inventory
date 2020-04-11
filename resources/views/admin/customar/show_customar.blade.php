@@ -20,7 +20,7 @@
                             <a href="#"><i class="fa fa-inbox"></i> Inbox <span class="badge badge-danger float-right mt-3">2</span></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-envelope-o"></i> Sent Mail</a>
+                            <a href="#"><i class="fa fa-envelope-o"></i>{{$customar->customars->customar_group_name}}</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
@@ -32,7 +32,7 @@
                             <a href="#"><i class=" fa fa-trash-o"></i> Trash</a>
                         </li>
                     </ul>
-                    
+
                     <div class="inbox-body text-center">
                         <a href="{{route('all_customar')}}" class="btn btn-info">
                             <i class="fa fa-reply"></i>

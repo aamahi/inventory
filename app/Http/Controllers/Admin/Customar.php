@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class Customar extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //   Customar Group
 
     public function customar_group(){
@@ -93,13 +98,55 @@ class Customar extends Controller
 
 
     public function all_customar(){
-        $customars = \App\Model\Customar::all();
+        $customars = \App\Model\Customar::with('customars')->select('id','customar_name','phone','email','balance','due','photo','customar_group_id','address')->get();
         return view('admin.customar.all_customar',compact('customars'));
+//        dd($customars);
     }
 
     public function show_customar($id){
-        $customar = \App\Model\Customar::find($id);
+        $customar = \App\Model\Customar::with('customars')->find($id);
         return view('admin.customar.show_customar',compact('customar'));
+    }
+
+    public function delete_customar($id)
+    {
+        $delete = \App\Model\Customar::find($id);
+//        unlink('Uploads/employe/'.$delete->image);
+        $u = $delete->delete();
+        if ($u) {
+            $notification = array(
+                'message' => "Customar Deleted Successfully",
+                'alert-type' => 'error'
+            );
+            return redirect()->route('all_customar')->with($notification);
+        }
+    }
+
+    public function deleted_customar(){
+        $deleted_customar = \App\Model\Customar::onlyTrashed()->get();
+        return view('admin.customar.deleted_customar',compact('deleted_customar'));
+    }
+    public function restore($id){
+        $restore =  \App\Model\Customar::withTrashed()->find($id)->restore();
+        if ($restore) {
+            $notification = array(
+                'message' => "Customar Back Successfully",
+                'alert-type' => 'info'
+            );
+            return redirect()->route('all_customar')->with($notification);
+        }
+    }
+    public function deleteF($id){
+        $deleteF= \App\Model\Customar::onlyTrashed()->find($id);
+//        unlink('Uploads/customar/'.$deleteF->photo);
+        $deleteF->forceDelete();
+        if ($deleteF) {
+            $notification = array(
+                'message' => "Customar Deleted Successfully Lifetime",
+                'alert-type' => 'error'
+            );
+            return redirect()->route('h_deleted')->with($notification);
+        }
     }
 }
 

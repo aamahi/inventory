@@ -24,6 +24,7 @@ class CreateCustomarsTable extends Migration
             $table->integer('due')->default(0.00);
             $table->string('photo')->default('default.png');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
