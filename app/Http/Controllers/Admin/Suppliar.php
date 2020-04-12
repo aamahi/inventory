@@ -45,5 +45,10 @@ class Suppliar extends Controller
 
         return redirect()->route('add_suppliar')->with($notification);
     }
+
+    public function all_suppliar(){
+        $suppliars = \App\Model\Suppliar::all();
+        return view('admin.suppliar.all_suppliar',compact('suppliars'));
+    }
 }
 

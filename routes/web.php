@@ -58,4 +58,4 @@ Route::get('/restore_customar/{id}','Admin\Customar@restore')->name('restore_cus
 //      Customar Route
 Route::get('/add/suppliar','Admin\Suppliar@add_suppliar')->name('add_suppliar');
 Route::post('/add/suppliar','Admin\Suppliar@add_suppliar_process');
-Route::get('/suppliar','Admin\Suppliar@all_suppliar')->name('all_suppliar');
+Route::get('/suppliar','Admin\Suppliar@all_suppliar')->name('suppliar');

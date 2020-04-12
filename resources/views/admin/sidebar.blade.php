@@ -38,8 +38,7 @@
                 </a>
                 <ul class="sub">
                     <li><a  href="{{route('add_suppliar')}}">Add Supplier</a></li>
-                    <li><a  href="{{route('all_customar')}}">All Customar</a></li>
-                    <li><a  href="{{route('h_deleted')}}">Deleted Customar</a></li>
+                    <li><a  href="{{route('suppliar')}}">All Suppliar</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
