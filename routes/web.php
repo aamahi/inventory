@@ -12,10 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//          Auth Route
+Auth::routes();
+
+Route::get('/home', function(){return redirect()->route('home');});
 
 //        Admin Route
 Route::get('/',function (){ return redirect()->route('home'); });
 Route::get('/admin','Admin\Home@index')->name('home');
+
 //      Employe Route
 Route::get('/add/employe','Admin\Employe@add_employe')->name('employe');
 Route::post('/add/employe','Admin\Employe@add_employe_process');
@@ -48,7 +53,9 @@ Route::get('/deleted_customar','Admin\Customar@deleted_customar')->name('h_delet
 Route::get('/h_delete_customar/{id}','Admin\Customar@deleteF')->name('customar_delete_h');
 Route::get('/restore_customar/{id}','Admin\Customar@restore')->name('restore_customar');
 
-//          Auth Route
-Auth::routes();
+//          Suppliar Route
 
-Route::get('/home', function(){return redirect()->route('home');});
+//      Customar Route
+Route::get('/add/suppliar','Admin\Suppliar@add_suppliar')->name('add_suppliar');
+Route::post('/add/suppliar','Admin\Suppliar@add_suppliar_process');
+Route::get('/suppliar','Admin\Suppliar@all_suppliar')->name('all_suppliar');
