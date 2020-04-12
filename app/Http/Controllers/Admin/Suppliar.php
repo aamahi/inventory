@@ -43,12 +43,28 @@ class Suppliar extends Controller
             }
         }
 
-        return redirect()->route('add_suppliar')->with($notification);
+        return redirect()->route('suppliar')->with($notification);
     }
 
     public function all_suppliar(){
         $suppliars = \App\Model\Suppliar::all();
         return view('admin.suppliar.all_suppliar',compact('suppliars'));
+    }
+    public function show_suppliar($id){
+        $suppliar = \App\Model\Suppliar::find($id);
+        return view('admin.suppliar.show_suppliar',compact('suppliar'));
+    }
+    public function delete_suppliar($id){
+        $suppliar = \App\Model\Suppliar::find($id);
+        unlink('Uploads/suppliar/'.$suppliar->photo);
+        $suppliar->delete();
+        if($suppliar){
+            $notification = array(
+                'message' => "Suppliar Deleted",
+                'alert-type' => 'warning'
+            );
+        }
+        return redirect()->route('suppliar')->with($notification);
     }
 }
 

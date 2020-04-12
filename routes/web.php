@@ -59,3 +59,8 @@ Route::get('/restore_customar/{id}','Admin\Customar@restore')->name('restore_cus
 Route::get('/add/suppliar','Admin\Suppliar@add_suppliar')->name('add_suppliar');
 Route::post('/add/suppliar','Admin\Suppliar@add_suppliar_process');
 Route::get('/suppliar','Admin\Suppliar@all_suppliar')->name('suppliar');
+//Route::get('/update/suppliar/{id}','Admin\Suppliar@update_suppliar')->name('update_suppliar');
+//Route::post('/update/employe/{id}','Admin\Employe@update_employe_pro');
+Route::get('/show/suppliar/{id}','Admin\Suppliar@show_suppliar')->name('show_suppliar');
+
+Route::get('/delete/suppliar/{id}','Admin\Suppliar@delete_suppliar')->name('delete_suppliar');

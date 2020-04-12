@@ -27,9 +27,9 @@
                                 <th>{{$suppliar->company_name}}</th>
                                 <th>{{$suppliar->email}}</th>
                                 <th>
-{{--                                    <a href="{{route('show_suppliar',$suppliar->id)}}"  class="btn btn-md btn-success" > <i class="fa fa-eye"> </i> </a>--}}
-{{--                                    <a href="{{route('update_suppliar',$suppliar->id)}}" class="btn btn-md btn-info"> <i class="fa fa-pencil-square-o"> </i> </a>--}}
-{{--                                    <a href="{{route('delete_update',$suppliar->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> </a>--}}
+                                    <a href="{{route('show_suppliar',$suppliar->id)}}"  class="btn btn-md btn-success" > <i class="fa fa-eye"> </i> </a>
+                                    <a href="{{route('show_suppliar',$suppliar->id)}}" class="btn btn-md btn-info"> <i class="fa fa-pencil-square-o"> </i> </a>
+                                    <a href="{{route('delete_suppliar',$suppliar->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> </a>
                                 </th>
                             </tr>
                                 @empty
