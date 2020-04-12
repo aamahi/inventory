@@ -34,6 +34,21 @@ class Customar extends Controller
         );
         return redirect()->back()->with($notification);
     }
+    public function update_customar_group($id){
+        $customar_group = Customar_group::find($id);
+        return view('admin.customar.update_customar_group',compact('customar_group'));
+    }
+    public  function update_customar_groupP(Request $request ,$id){
+        $this->validate($request , [
+            'customar_group_name'=>'required'
+        ]);
+//        return $request->all();
+        $customar_group = Customar_group::find($id);
+        $customar_group->customar_group_name = $request->customar_group_name;
+        $customar_group->save();
+        return redirect()->route('customar_group');
+    }
+
     public function delete_customar_group($id){
         $delete_customar_group = Customar_group::find($id)->delete();
         $notification = array(
@@ -51,6 +66,7 @@ class Customar extends Controller
     }
     public function add_customar_process(Request $request){
         $this->validate($request , [
+            'customar_group_id'=>'required',
             'customar_name'=>'required',
             'phone'=>'required',
             'address'=>'required',
@@ -147,6 +163,73 @@ class Customar extends Controller
             );
             return redirect()->route('h_deleted')->with($notification);
         }
+    }
+
+    public function update_customar($id){
+        $customar=  \App\Model\Customar::find($id);
+        $customar_group = Customar_group::all();
+        return view('admin.customar.update_customar',compact('customar','customar_group'));
+    }
+    public function update_customar_pro(Request $request ,$id){
+        $old_customar = \App\Model\Customar::find($id);
+
+        $this->validate($request , [
+            'customar_group_id'=>'required',
+            'name'=>'required',
+            'phone'=>'required',
+            'address'=>'required',
+        ]);
+
+        if ($request->file('photo')){
+            $photo = $request->file('photo');
+            $photo_extension = $photo->getClientOriginalExtension();
+            $photo_name = "employe_no_".date('Ymd_h_is').rand(1,9);
+            $image = $photo_name.".".$photo_extension;
+//            $customar['photo'] = $image;
+        }
+
+        $customar_name = $request->name;
+        $customar_group_id = $request->customar_group_id;
+        $phone = $request->phone;
+        $email= $request->email;
+        $address= $request->address;
+
+        if($request->file('photo')) {
+            if ($photo->isValid()) {
+                unlink('Uploads/customar', $old_customar->photo);
+                $photo->move('Uploads/customar', $image);
+
+                $old_customar->name = $customar_name;
+                $old_customar->customar_group_id = $customar_group_id;
+                $old_customar->phone = $phone;
+                $old_customar->email = $email;
+                $old_customar->address = $address;
+                $old_customar->photo = $photo;
+                $old_customar->save;
+
+                if ($old_customar) {
+                    $notification = array(
+                        'message' => "Customar Updated Successfully",
+                        'alert-type' => 'success'
+                    );
+                }
+            }
+        }else{
+//            $old_customar->name = $customar_name;
+//            $old_customar->customar_group_id = $customar_group_id;
+//            $old_customar->phone = $phone;
+//            $old_customar->email = $email;
+//            $old_customar->address = $address;
+//            $old_customar->save;
+//            if ($old_customar) {
+//                $notification = array(
+//                    'message' => "Customar Added Successfully",
+//                    'alert-type' => 'success'
+//                );
+//            }
+        }
+        return redirect()->route('all_customar');
+
     }
 }
 

@@ -31,9 +31,8 @@
                                 <th>@if($customar->due==0)0.00 @else {{$customar->due}} @endif Taka</th>
                                 <th>{{$customar->address}}</th>
                                 <th>
-{{--                                    {{route('update_customar',$customar->id)}}--}}
                                     <a href="{{route('show_customar',$customar->id)}}"  class="btn btn-md btn-success" > <i class="fa fa-money"> </i> </a>
-                                    <a href="" class="btn btn-md btn-info"> <i class="fa fa-pencil-square-o"> </i> </a>
+                                    <a href="{{route('update_customar',$customar->id)}}" class="btn btn-md btn-info"> <i class="fa fa-pencil-square-o"> </i> </a>
                                     <a href="{{route('delete_customar',$customar->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> </a>
                                 </th>
                             </tr>

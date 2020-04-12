@@ -29,8 +29,8 @@
                             <div class="col-sm-10">
                                 <select name="customar_group_id" class="form-control">
                                     @foreach($customar_group as $customar_group_name)
-                                    <option value="{{$customar_group_name->id}}">{{$customar_group_name->customar_group_name}}</option>
-                                    @endforeach
+                                            <option value="{{$customar_group_name->id}}">{{$customar_group_name->customar_group_name}}</option>
+                                        @endforeach
                                 </select>
                             </div>
                         </div>

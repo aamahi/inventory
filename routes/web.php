@@ -43,9 +43,11 @@ Route::get('/customar_group','Admin\Customar@customar_group')->name('customar_gr
 
 Route::post('/customar_group','Admin\Customar@customar_group_add');
 Route::get('/delete_customar_group/{id}','Admin\Customar@delete_customar_group')->name('delete_customar_group');
+Route::get('/update_customar_group/{id}','Admin\Customar@update_customar_group')->name('update_delete_customar_group');
+Route::post('/update_customar_group/{id}','Admin\Customar@update_customar_groupP');
 
-//Route::get('/update/employe/{id}','Admin\Employe@update_employe')->name('update_employe');
-//Route::post('/update/employe/{id}','Admin\Employe@update_employe_pro');
+Route::get('/update/customar/{id}','Admin\Customar@update_customar')->name('update_customar');
+Route::post('/update/customar/{id}','Admin\Customar@update_customar_pro');
 Route::get('/show/customar/{id}','Admin\Customar@show_customar')->name('show_customar');
 //
 Route::get('/delete/customar/{id}','Admin\Customar@delete_customar')->name('delete_customar');

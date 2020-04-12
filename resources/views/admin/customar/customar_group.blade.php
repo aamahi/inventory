@@ -25,7 +25,8 @@
                                     <td>{{$group->id}}</td>
                                     <td>{{$group->customar_group_name}}</td>
                                     <td>
-                                        <a href="{{route('delete_customar_group',$group->id)}}" class="btn btn-danger"> Delete </a>
+                                        <a href="{{route('update_delete_customar_group',$group->id)}}" class="btn btn-warning"> Update </a>
+                                        <a href="{{route('delete_customar_group',$group->id)}}" class="btn btn-danger delete"> Delete </a>
                                     </td>
                                 </tr>
                                     @empty
