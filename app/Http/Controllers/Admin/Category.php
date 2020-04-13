@@ -31,5 +31,23 @@ class Category extends Controller
         );
         return redirect()->back()->with($notification);
     }
+
+    public function edit_category($id){
+        $category_info = \App\Model\Category::find($id);
+        return view('admin.category.update_category',compact('category_info'));
+    }
+    public function update_category(Request $request , $id){
+        $this->validate($request,[
+            'category_name'=>"required",
+        ]);
+       $update_category = \App\Model\Category::find($id)->update([
+           'category_name' => $request->category_name,
+       ]);
+        $notification = array(
+            'message' => "Category Updated",
+            'alert-type' => 'primary'
+        );
+        return redirect()->route('category')->with($notification);
+    }
 }
 
