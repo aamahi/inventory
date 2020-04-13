@@ -29,6 +29,7 @@
 <script src="{{asset('asset/js/sparkline-chart.js')}}"></script>
 <script src="{{asset('asset/js/easy-pie-chart.js')}}"></script>
 <script src="{{asset('asset/js/count.js')}}"></script>
+
 <script !src="">
     $('.delete').on('click', function (event) {
         event.preventDefault();
@@ -43,6 +44,22 @@
             }
         });
     });
+</script>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(160);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 <script>
         @if(Session::has('message'))

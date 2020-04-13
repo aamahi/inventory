@@ -74,8 +74,8 @@ Route::get('/delete_category/{id}','Admin\Category@delete_category')->name('dele
 Route::get('/update_category/{id}','Admin\Category@edit_category')->name('update_category');
 Route::Post('/update_category/{id}','Admin\Category@update_category');
 //          Product
-Route::get('/category','Admin\Category@category')->name('category');
-Route::post('/category','Admin\Category@category_add');
+Route::get('/add/product','Admin\Product@add_product')->name('add_product');
+Route::post('/add/product','Admin\Product@add_product_pro');
 //Route::get('/delete_category_temporary/{id}','Admin\Category@delete_category_temporary')->name('delete_category_temporary');
 //Route::get('/temporary_deleted_category','Admin\Category@temporary_deleted_category')->name('temporary_deleted_category');
 //Route::get('/restore_deleted_category/{id}','Admin\Category@restore_deleted_category')->name('restore_deleted_category');

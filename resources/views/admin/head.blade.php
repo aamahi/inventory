@@ -9,6 +9,9 @@
     {{--    <link rel="shortcut icon" href="{{asset('asset/img/favicon.html')}}">--}}
 
     <title>Inventory Management system</title>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('asset/css/bootstrap.min.css')}}" rel="stylesheet">
