@@ -43,6 +43,17 @@
             </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Products</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="{{route('category')}}">Category</a></li>
+                    <li><a  href="{{route('suppliar')}}">All Suppliar</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;" >
                     <i class="fa fa-laptop"></i>
                     <span>Layouts</span>
                 </a>

@@ -39,8 +39,8 @@ Route::get('/restore/{id}','Admin\Employe@restore')->name('restore');
 Route::get('/add/customar','Admin\Customar@add_customar')->name('add_customar');
 Route::post('/add/customar','Admin\Customar@add_customar_process');
 Route::get('/customar','Admin\Customar@all_customar')->name('all_customar');
-Route::get('/customar_group','Admin\Customar@customar_group')->name('customar_group');
 
+Route::get('/customar_group','Admin\Customar@customar_group')->name('customar_group');
 Route::post('/customar_group','Admin\Customar@customar_group_add');
 Route::get('/delete_customar_group/{id}','Admin\Customar@delete_customar_group')->name('delete_customar_group');
 Route::get('/update_customar_group/{id}','Admin\Customar@update_customar_group')->name('update_delete_customar_group');
@@ -56,8 +56,6 @@ Route::get('/h_delete_customar/{id}','Admin\Customar@deleteF')->name('customar_d
 Route::get('/restore_customar/{id}','Admin\Customar@restore')->name('restore_customar');
 
 //          Suppliar Route
-
-//      Customar Route
 Route::get('/add/suppliar','Admin\Suppliar@add_suppliar')->name('add_suppliar');
 Route::post('/add/suppliar','Admin\Suppliar@add_suppliar_process');
 Route::get('/suppliar','Admin\Suppliar@all_suppliar')->name('suppliar');
@@ -66,3 +64,11 @@ Route::get('/suppliar','Admin\Suppliar@all_suppliar')->name('suppliar');
 Route::get('/show/suppliar/{id}','Admin\Suppliar@show_suppliar')->name('show_suppliar');
 
 Route::get('/delete/suppliar/{id}','Admin\Suppliar@delete_suppliar')->name('delete_suppliar');
+//          Category Route
+Route::get('/category','Admin\Category@category')->name('category');
+Route::post('/category','Admin\Category@category_add');
+Route::get('/delete_category_temporary/{id}','Admin\Category@delete_category_temporary')->name('delete_category_temporary');
+
+Route::get('/update_category/{id}','Admin\Category@edit_category')->name('update_category');
+Route::Post('/update_category/{id}','Admin\Category@update_category_process');
+
