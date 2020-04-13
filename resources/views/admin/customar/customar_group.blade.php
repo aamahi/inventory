@@ -1,4 +1,7 @@
 @extends('index')
+@section('status')
+    active
+@endsection
 @section('content')
 
     <section id="main-content">

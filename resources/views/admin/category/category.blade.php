@@ -1,4 +1,7 @@
 @extends('index')
+@section('status')
+    active
+@endsection
 @section('content')
 
     <section id="main-content">
@@ -25,9 +28,10 @@
                                 <tr>
                                     <td>{{$category->id}}</td>
                                     <td>{{$category->category_name}}</td>
+                                    <td>{{$category->created_at->format("jS F ,Y")}}</td>
                                     <td>
-                                        <a href="{{route('update_category',$category->id)}}" class="btn btn-warning"> Update </a>
-                                        <a href="{{route('delete_category_temporary',$category->id)}}" class="btn btn-danger delete"> Delete </a>
+                                        <a href="{{route('update_category',$category->id)}}" class="btn btn-info"> Update </a>
+                                        <a href="{{url('delete_category_temporary',$category->id)}}" class="btn btn-danger delete"> Delete </a>
                                     </td>
                                 </tr>
                                     @empty

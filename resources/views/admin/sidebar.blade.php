@@ -10,6 +10,19 @@
             </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Products</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="{{route('category')}}">Category</a></li>
+                    <li><a  href="{{route('temporary_deleted_category')}}">Deleted Category</a></li>
+                    <li><a  href="{{route('add_product')}}">Add Product</a></li>
+                    <li><a  href="{{route('temporary_deleted_category')}}">Product List</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;" >
                     <i class="fa fa-users"></i>
                     <span>Employe</span>
                 </a>
@@ -38,16 +51,6 @@
                 </a>
                 <ul class="sub">
                     <li><a  href="{{route('add_suppliar')}}">Add Supplier</a></li>
-                    <li><a  href="{{route('suppliar')}}">All Suppliar</a></li>
-                </ul>
-            </li>
-            <li class="sub-menu">
-                <a href="javascript:;" >
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>Products</span>
-                </a>
-                <ul class="sub">
-                    <li><a  href="{{route('category')}}">Category</a></li>
                     <li><a  href="{{route('suppliar')}}">All Suppliar</a></li>
                 </ul>
             </li>

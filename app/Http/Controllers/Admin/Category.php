@@ -49,5 +49,38 @@ class Category extends Controller
         );
         return redirect()->route('category')->with($notification);
     }
+
+    public function delete_category_temporary($id){
+        $soft_delete = \App\Model\Category::find($id);
+        $soft_delete->delete();
+        $notification = array(
+            'message' => "Category Deleted Temporary",
+            'alert-type' => 'error'
+        );
+        return redirect()->route('category')->with($notification);
+    }
+    public function temporary_deleted_category(){
+        $temporary_deleted_category = \App\Model\Category::onlyTrashed()->get();
+        return view('admin.category.temporary_deleted_category',compact('temporary_deleted_category'));
+    }
+    public function restore_deleted_category($id){
+        echo $id;
+        $restore = \App\Model\Category::withTrashed()->find($id)->restore();
+        $notification = array(
+            'message' => "Category Restored",
+            'alert-type' => 'primary'
+        );
+        return redirect()->route('category')->with($notification);
+    }
+    public function delete_category($id){
+        $delete_category = \App\Model\Category::onlyTrashed()->find($id);
+        $delete_category->forceDelete();
+        $notification = array(
+            'message' => "Category Deleted Sucessfully",
+            'alert-type' => 'error'
+        );
+        return redirect()->route('temporary_deleted_category')->with($notification);
+
+    }
 }
 
