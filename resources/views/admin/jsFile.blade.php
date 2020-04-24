@@ -33,6 +33,7 @@
 <script !src="">
     $('.delete').on('click', function (event) {
         event.preventDefault();
+
         const url = $(this).attr('href');
         swal({
             title: 'Are you sure want to delete?',

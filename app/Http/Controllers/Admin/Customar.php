@@ -68,7 +68,7 @@ class Customar extends Controller
         $this->validate($request , [
             'customar_group_id'=>'required',
             'customar_name'=>'required',
-            'phone'=>'required',
+            'phone'=>'required|min:10|max:11',
             'address'=>'required',
         ]);
 
