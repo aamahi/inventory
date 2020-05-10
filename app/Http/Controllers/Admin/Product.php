@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use function GuzzleHttp\Psr7\_parse_request_uri;
 
 class Product extends Controller
 {
@@ -44,5 +45,10 @@ class Product extends Controller
         }
 
         return redirect()->route('add_product')->with($notification);
+    }
+    public function product_list(){
+        $categories = \App\Model\Category::select('category_name','id')->get();
+        $products = \App\Model\Product::latest()->get();
+        return view('admin.product.product_list',compact('categories','products'));
     }
 }

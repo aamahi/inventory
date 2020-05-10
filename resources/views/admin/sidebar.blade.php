@@ -17,7 +17,7 @@
                     <li><a  href="{{route('category')}}">Category</a></li>
                     <li><a  href="{{route('temporary_deleted_category')}}">Deleted Category</a></li>
                     <li><a  href="{{route('add_product')}}">Add Product</a></li>
-                    <li><a  href="{{route('temporary_deleted_category')}}">Product List</a></li>
+                    <li><a  href="{{route('product_list')}}">Product List</a></li>
                 </ul>
             </li>
 
