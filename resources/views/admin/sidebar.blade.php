@@ -10,12 +10,20 @@
             </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>Products</span>
+                    <i class="fa fa-tag"></i>
+                    <span>Category</span>
                 </a>
                 <ul class="sub">
                     <li><a  href="{{route('category')}}">Category</a></li>
                     <li><a  href="{{route('temporary_deleted_category')}}">Deleted Category</a></li>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Products</span>
+                </a>
+                <ul class="sub">
                     <li><a  href="{{route('add_product')}}">Add Product</a></li>
                     <li><a  href="{{route('product_list')}}">Product List</a></li>
                     <li><a  href="{{route('deleted_product')}}">Deleted Product</a></li>
