@@ -105,8 +105,8 @@
                             <section class="card">
                                 <div class="pro-img-box">
                                     <img src="{{asset('Uploads/product/'.$product->photo)}}" alt=""/>
-                                    <a href="#" class="adtocart">
-                                        <i class="fa fa-shopping-cart"></i>
+                                    <a href="{{route('product_details')}}" class="adtocart">
+                                        <i class="fa fa-eye"></i>
                                     </a>
                                 </div>
 
