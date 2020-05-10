@@ -1,5 +1,6 @@
 @extends('index')
 @section('content')
+    <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
             <!-- page start-->
@@ -61,47 +62,49 @@
                     </section>
                 </div>
                 <div class="col-md-9">
-                    <section class="card">
-                        <div class="card-body">
-                            <div class="pro-sort">
-                                <label class="pro-lab">Sort By</label>
-                                <select class="styled" >
-                                    <option>Default Sorting</option>
-                                    <option>Popularity</option>
-                                    <option>Average Rating</option>
-                                    <option>Newness</option>
-                                    <option>Price Low to High</option>
-                                    <option>Price High to Low</option>
-                                </select>
-                            </div>
-                            <div class="pro-sort">
-                                <label class="pro-lab">Show</label>
-                                <select class="styled" >
-                                    <option>Result Per Page</option>
-                                    <option>2 Per Page</option>
-                                    <option>4 Per Page</option>
-                                    <option>6 Per Page</option>
-                                    <option>8 Per Page</option>
-                                    <option>10 Per Page</option>
-                                </select>
-                            </div>
 
-                            <div class="float-right">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination pagination-sm mb-0">
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">»</a></li>
-                                    </ul>
-                                </nav>
+                    <section class="card ">
+                        <div class="card-body row">
+                            <div class="col-md-6">
+                                <div class="pro-img-details">
+                                    <img class="img-fluid" src="{{asset('Uploads/product/'.$product_details->photo)}}" alt=""/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="pro-d-title">
+                                    <a href="#" class="">
+                                        {{$product_details->product_name}}
+                                    </a>
+                                </h4>
+                                <p>
+                                    {{$product_details->product_details}}
+                                </p>
+                                <div class="product_meta">
+                                    <span class="posted_in"> <strong>Categories:</strong> <a rel="tag" href="#"> {{($product_details->category)->category_name}} </a>.</span>
+                                    <span class="tagged_as"><strong>Available Product:</strong>  {{$product_details->quantity}} </span>
+                                </div>
+                                <div class="m-bot15"> <strong>Price : </strong> <span class="pro-price"> {{$product_details->product_price}} .00 taka</span></div>
+                                <p>
+                                    <a href="{{route('product_edit',$product_details->id)}}" class="btn btn-round btn-success" type="button"><i class="fa fa-pencil"></i> Edit </a>
+                                    <a href="{{route('product_delete',$product_details->id)}}" class="btn btn-round btn-danger" type="button"><i class="fa fa-trash-o"></i> Delete</a>
+                                    <a href="{{route('product_list')}}" class="btn btn-round btn-primary" type="button"><i class="fa fa-reply"></i> Back</a>
+                                </p>
                             </div>
                         </div>
                     </section>
 
+                    <section class="card">
+                        <header class="card-header tab-bg-dark-navy-blue p-0">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link"> Related Product</a>
+                                </li>
+                            </ul>
+                        </header>
+                    </section>
                     <div class="row product-list">
-                        @foreach($products as $product)
-                            <div class="col-md-4">
+                        @foreach($related_product as $product)
+                        <div class="col-md-4">
                             <section class="card">
                                 <div class="pro-img-box">
                                     <img src="{{asset('Uploads/product/'.$product->photo)}}" alt=""/>
@@ -116,7 +119,7 @@
                                             {{$product->product_name}}
                                         </a>
                                     </h4>
-                                    <p class="price"> {{$product->product_price}} taka</p>
+                                    <p class="price">{{$product->product_price}} .00 taka</p>
                                 </div>
                             </section>
                         </div>
@@ -127,4 +130,5 @@
             <!-- page end-->
         </section>
     </section>
+    <!--main content end-->
 @endsection

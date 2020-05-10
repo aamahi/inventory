@@ -5,7 +5,7 @@
         <section class="wrapper">
             <section class="card">
                 <header class="card-header bg-info text-center text-light">
-                   Deleted Customar Information
+                   Deleted Product list
                 </header>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -14,23 +14,23 @@
                             <tr>
                                 <th>Image</th>
                                 <th>Name</th>
-                                <th>Phone</th>
-                                <th>Address</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
                                 <th>Deleted</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @forelse($deleted_customar as $customar)
+                            @forelse($products as $product)
                             <tr>
-                                <th><img src="{{asset('Uploads/customar/'.$customar->photo)}}" width="65px;" alt=""></th>
-                                <th>{{$customar->customar_name}}</th>
-                                <th>0{{$customar->phone}}</th>
-                                <th>{{$customar->address}}</th>
-                                <th>{{$customar->deleted_at->format("jS M, Y")}}</th>
+                                <th><img src="{{asset('Uploads/product/'.$product->photo)}}" width="65px;" alt=""></th>
+                                <th>{{$product->product_name}}</th>
+                                <th>{{$product->quantity}}</th>
+                                <th>{{$product->product_price}}.00 taka</th>
+                                <th>{{$product->deleted_at->format("jS M, Y")}}</th>
                                 <th>
-                                    <a href="{{route('restore_customar',$customar->id)}}"  class="btn btn-md btn-primary"> <i class="fa fa-reply"> </i> Restore </a>
-                                    <a href="{{route('customar_delete_h',$customar->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> Delete </a>
+                                    <a href="{{route('restore_customar',$product->id)}}"  class="btn btn-md btn-primary"> <i class="fa fa-reply"> </i> Restore </a>
+                                    <a href="{{route('product_harddelete',$product->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> Delete </a>
                                 </th>
                             </tr>
                                 @empty
