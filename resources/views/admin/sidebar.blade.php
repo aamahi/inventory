@@ -41,6 +41,12 @@
                     <li><a  href="{{route('deleted_employe')}}">Deleted Employe</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="{{route('salary')}}">
+                    <i class="fa fa-dollar"></i>
+                    <span>Salary</span>
+                </a>
+            </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-user"></i>

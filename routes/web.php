@@ -84,6 +84,9 @@ Route::get('/product/deleted_product','Admin\Product@deleted_product')->name('de
 Route::get('/product/product_harddelete/{id}','Admin\Product@product_harddelete')->name('product_harddelete');
 Route::get('/product/restore_product/{id}','Admin\Product@restore_product')->name('restore_product');
 
+//          Salary
+Route::get('/salary','Admin\Salary@index')->name('salary');
+Route::post('/salary','Admin\Salary@paysalary');
 //Route::get('/delete_category_temporary/{id}','Admin\Category@delete_category_temporary')->name('delete_category_temporary');
 //Route::get('/temporary_deleted_category','Admin\Category@temporary_deleted_category')->name('temporary_deleted_category');
 //Route::get('/restore_deleted_category/{id}','Admin\Category@restore_deleted_category')->name('restore_deleted_category');
