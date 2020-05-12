@@ -16,7 +16,7 @@ class Salary extends Controller
 
     public function index(){
         $employes = Empolye::select('name','id')->get();
-        $paysalarys = \App\Model\salary::with('employes')->select('employe_id','month','year','created_at')->paginate(5);
+        $paysalarys = \App\Model\salary::with('employes')->select('employe_id','month','year','created_at')->orderBy('id','DESC')->paginate(5);
         return view('admin.employe.salary',compact('employes','paysalarys'));
     }
     public function paysalary(Request $request){
@@ -37,12 +37,20 @@ class Salary extends Controller
             );
             return redirect()->back()->with($notification);
         }else{
-            \App\Model\salary::insert($paySalary);
-            $notification = array(
-                'message' => "Salary Pay Sucessfully",
-                'alert-type' => 'success'
-            );
-            return redirect()->back()->with($notification);
+            if($paySalary['month']<Carbon::now()->format('F')){
+                $notification = array(
+                    'message' => "Can't pay advance salary",
+                    'alert-type' => 'error'
+                );
+                return redirect()->back()->with($notification);
+            }else{
+                \App\Model\salary::insert($paySalary);
+                $notification = array(
+                    'message' => "Salary Pay Sucessfully",
+                    'alert-type' => 'success'
+                );
+                return redirect()->back()->with($notification);
+            }
         }
 
     }
