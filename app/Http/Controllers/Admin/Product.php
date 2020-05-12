@@ -81,6 +81,14 @@ class Product extends Controller
         return redirect()->route('deleted_product')->with($notification);
 
     }
+    public  function restore_product($id){
+        $restore_product = \App\Model\Product::onlyTrashed()->find($id)->restore();
+        $notification = array(
+            'message' => "Product Restore Sucessfully !",
+            'alert-type' => 'info'
+        );
+        return redirect()->route('product_list')->with($notification);
+    }
     public function product_edit($id){
         echo $id;
     }

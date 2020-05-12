@@ -29,7 +29,7 @@
                                 <th>{{$product->product_price}}.00 taka</th>
                                 <th>{{$product->deleted_at->format("jS M, Y")}}</th>
                                 <th>
-                                    <a href="{{route('restore_customar',$product->id)}}"  class="btn btn-md btn-primary"> <i class="fa fa-reply"> </i> Restore </a>
+                                    <a href="{{route('restore_product',$product->id)}}"  class="btn btn-md btn-primary"> <i class="fa fa-reply"> </i> Restore </a>
                                     <a href="{{route('product_harddelete',$product->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> Delete </a>
                                 </th>
                             </tr>
