@@ -17,39 +17,43 @@
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Category Name</th>
-                                    <th>Created</th>
-                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Employe Name</th>
+                                    <th>Salary</th>
+                                    <th>Month</th>
+                                    <th>Pay Date</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-{{--                                @forelse($categories as $category)--}}
-{{--                                <tr>--}}
-{{--                                    <td>{{$category->id}}</td>--}}
-{{--                                    <td>{{$category->category_name}}</td>--}}
-{{--                                    <td>{{$category->created_at->format("jS F ,Y")}}</td>--}}
-{{--                                    <td>--}}
-{{--                                        <a href="{{route('update_category',$category->id)}}" class="btn btn-info"> Update </a>--}}
-{{--                                        <a href="{{url('delete_category_temporary',$category->id)}}" class="btn btn-danger delete"> Delete </a>--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                                    @empty--}}
-{{--                                        <tr>--}}
-{{--                                            <td colspan="30" class="text-center text-dark">No Customar Group found</td>--}}
-{{--                                        </tr>--}}
+                                @php
+                                    $i=1;
+                                @endphp
+                                @forelse($paysalarys as $paysalary)
+                                <tr>
+                                    <td>{{$i++}}</td>
+                                    <td>{{($paysalary->employes)->name}}</td>
+                                    <td>{{($paysalary->employes)->salary}}</td>
+                                    <td>{{$paysalary->month}}</td>
+                                    <td>{{$paysalary->created_at->format("jS F ,Y")}}</td>
+                                </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="30" class="text-center text-dark">No Customar Group found</td>
+                                        </tr>
 
-{{--                                @endforelse--}}
+                                @endforelse
                                 </tbody>
                             </table>
+
                         </div>
+                        {{$paysalarys->links()}}
                     </section>
                 </div>
                 <div class="col-md-4">
                     <section class="card">
 
                         <header class="card-header text-center bg-info text-light">
-                            Add Category
+                            Pay Employe Salary
                         </header>
 
                         <div class="card-body">

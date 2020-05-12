@@ -16,7 +16,8 @@ class Salary extends Controller
 
     public function index(){
         $employes = Empolye::select('name','id')->get();
-        return view('admin.employe.salary',compact('employes'));
+        $paysalarys = \App\Model\salary::with('employes')->select('employe_id','month','year','created_at')->paginate(5);
+        return view('admin.employe.salary',compact('employes','paysalarys'));
     }
     public function paysalary(Request $request){
         $validation_rule =[
