@@ -14,7 +14,7 @@ trait AuthenticatesUsers
     /**
      * Show the application's login form.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function showLoginForm()
     {
@@ -53,7 +53,6 @@ trait AuthenticatesUsers
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
-
     }
 
     /**
@@ -70,7 +69,6 @@ trait AuthenticatesUsers
             $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
-
     }
 
     /**
@@ -175,7 +173,7 @@ trait AuthenticatesUsers
 
         return $request->wantsJson()
             ? new Response('', 204)
-            : redirect('/login');
+            : redirect('/');
     }
 
     /**
