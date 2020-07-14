@@ -29,7 +29,12 @@
                     <li><a  href="{{route('deleted_product')}}">Deleted Product</a></li>
                 </ul>
             </li>
-
+            <li>
+                <a href="{{route('stock')}}">
+                    <i class="fa fa-dollar"></i>
+                    <span>Stock</span>
+                </a>
+            </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-users"></i>

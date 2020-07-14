@@ -14,6 +14,7 @@
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 
+
     <!-- Bootstrap core CSS -->
     <link href="{{asset('asset/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('asset/css/bootstrap-reset.css')}}" rel="stylesheet">
@@ -33,6 +34,7 @@
 {{--    datatable--}}
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <!-- Custom styles for this template -->
+    <link href="{{asset('select2/dist/css/select2.min.css')}}" rel='stylesheet' type='text/css'>
 
     <link href="{{asset('asset/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('asset/css/style-responsive.css')}}" rel="stylesheet" />

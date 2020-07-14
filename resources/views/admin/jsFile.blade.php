@@ -30,6 +30,8 @@
 <script src="{{asset('asset/js/easy-pie-chart.js')}}"></script>
 <script src="{{asset('asset/js/count.js')}}"></script>
 
+<script src="{{asset('select2/dist/js/select2.min.js')}}" type='text/javascript'></script>
+
 <script !src="">
     $('.delete').on('click', function (event) {
         event.preventDefault();
@@ -116,6 +118,59 @@
     });
 
 </script>
+<script>
+    //search and dropdown
+    $(document).ready(function(){
 
+        // Initialize select2
+        $("#selUser").select2();
+
+        // Read selected option
+        $('#but_read').click(function(){
+            var username = $('#selUser option:selected').text();
+            var userid = $('#selUser').val();
+
+            $('#result').html("id : " + userid + ", name : " + username);
+
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+
+        var quantitiy=0;
+        $('.quantity-right-plus').click(function(e){
+
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+
+            // If is not undefined
+
+            $('#quantity').val(quantity + 1);
+
+
+            // Increment
+
+        });
+
+        $('.quantity-left-minus').click(function(e){
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+
+            // If is not undefined
+
+            // Increment
+            if(quantity>0){
+                $('#quantity').val(quantity - 1);
+            }
+        });
+
+    });
+
+</script>
 </body>
 </html>

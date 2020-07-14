@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Model\Cart;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use function GuzzleHttp\Psr7\_parse_request_uri;
@@ -47,9 +48,11 @@ class Product extends Controller
         return redirect()->route('add_product')->with($notification);
     }
     public function product_list(){
-        $categories = \App\Model\Category::select('category_name','id')->get();
+        $customars = \App\Model\Customar::select('id','customar_name','phone')->orderBy('customar_name','ASC')->get();
+        $carts = Cart::with('product')->latest()->get();
+//        $categories = \App\Model\Category::select('category_name','id')->get();
         $products = \App\Model\Product::latest()->get();
-        return view('admin.product.product_list',compact('categories','products'));
+        return view('admin.product.product_list',compact('carts','products','customars'));
     }
     public function product_details($id){
         $categories = \App\Model\Category::select('category_name','id')->get();
@@ -101,5 +104,52 @@ class Product extends Controller
         $products =  \App\Model\Product::where('product_name','LIKE',"%{$product_name}%")->get();
         $categories = \App\Model\Category::select('category_name','id')->get();
         return view('admin.product.search_product',compact('categories','products'));
+    }
+    public function addCart($id){
+
+        if (1 > \App\Model\Product::find($id)->quantity) {
+            return response()->json([
+                'error' => "Product ot of stock !"
+            ]);
+        } else {
+            $ip_address = request()->ip();
+            $data = [];
+            $data['product_id'] = $id;
+            $data['quantity'] = 1;
+            $data['ip'] =$ip_address;
+            $data['created_at']=Carbon::now();
+            if (Cart::where('product_id', $id)->where('ip', $ip_address)->exists()) {
+                Cart::where('product_id', $id)->where('ip', $ip_address)->increment('quantity', 1);
+                $notification = array(
+                    'message' => "Again Product add to cart!",
+                    'alert-type' => 'info'
+                );
+                return redirect()->route('product_list')->with($notification);
+            } else {
+                Cart::insert($data);
+                $notification = array(
+                    'message' => "Product Add to cart !",
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('product_list')->with($notification);
+            }
+        }
+    }
+    public  function deleteCart($id){
+        Cart::find($id)->delete();
+        $notification = array(
+            'message' => "Product Delete from cart!",
+            'alert-type' => 'error'
+        );
+        return redirect()->route('product_list')->with($notification);
+    }
+    public function cancelCart(){
+        $ip = \request()->ip();
+        Cart::where('ip','$id')->delete();
+        $notification = array(
+            'message' => "Cancel Order!",
+            'alert-type' => 'info'
+        );
+        return redirect()->route('product_list')->with($notification);
     }
 }

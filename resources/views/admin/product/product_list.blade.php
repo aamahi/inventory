@@ -4,63 +4,76 @@
         <section class="wrapper">
             <!-- page start-->
             <div class="row">
-                <div class="col-md-3">
-                    <section class="card">
-                        <div class="card-body">
-                            <input type="text" placeholder="Keyword Search" class="form-control">
-                        </div>
-                    </section>
+                <div class="col-md-5">
                     <section class="card">
                         <header class="card-header">
-                            Category
+                            Cart
                         </header>
                         <div class="card-body">
-                            <ul class="nav flex-column prod-cat">
-                                @foreach($categories as $category)
-                                    <li class="nav-item"><a href="#" class="nav-link"><i class=" fa fa-angle-right"></i> {{$category->category_name}} </a></li>
+                            <select id='selUser' style='width: 200px;'>
+                                <option selected disabled>Select Customar</option>
+                                <option value='00'>Unknown Customar</option>
+
+                            @foreach($customars as $customar)
+                                    <option value='{{$customar->id}}'>{{$customar->customar_name}}({{$customar->phone}})</option>
                                 @endforeach
-                            </ul>
-                        </div>
-                    </section>
-                    <section class="card">
-                        <header class="card-header">
-                            Filter
-                        </header>
-                        <div class="card-body">
-                            <form role="form product-form">
-                                <div class="form-group">
-                                    <label>Brand</label>
-                                    <select class="form-control">
-                                        <option>Wallmart</option>
-                                        <option>Catseye</option>
-                                        <option>Moonsoon</option>
-                                        <option>Textmart</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Color</label>
-                                    <select class="form-control">
-                                        <option>White</option>
-                                        <option>Black</option>
-                                        <option>Red</option>
-                                        <option>Green</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Type</label>
-                                    <select class="form-control">
-                                        <option>Small</option>
-                                        <option>Medium</option>
-                                        <option>Large</option>
-                                        <option>Extra Large</option>
-                                    </select>
-                                </div>
-                                <button class="btn btn-primary" type="submit">Filter</button>
-                            </form>
+                            </select>
+                            <br>
+                            <br>
+                            <table class="table table-bordered table-striped table-advance table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                    <th>price</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @php
+                                $total =0;
+                                @endphp
+
+                                @foreach($carts as $cart)
+                                <tr>
+                                    <td><a href="#">{{($cart->product)->product_name}}</a></td>
+                                    <td>
+                                        <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+                                                          <i class="fa fa-minus"></i>
+                                                        </button>
+                                                    </span>
+                                                    <input type="text" id="quantity" name="quantity" class="form-control input-number" value="{{$cart->quantity}}" min="1" max="100">
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                    </td>
+                                    @php
+                                        $quantity=$cart->quantity;
+                                        $unit_price = ($cart->product)->product_price;
+                                        $price_total = $quantity*$unit_price;
+                                        $total= $total+$price_total;
+                                    @endphp
+                                    <td><a href="#">{{$price_total}}</a></td>
+                                    <td><a class="btn btn-danger" href="{{route('deleteCart',$cart->id)}}"><i class="fa fa-trash-o"></i></a></td>
+                                </tr>
+                                @endforeach
+                                <tr class=" text-center">
+                                    <td colspan="2"> Total </td>
+                                    <td colspan="2">{{ $total}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <a href="{{route('cancelCart')}}" class="btn btn-info">Cancel</a>
+                            <button class="btn btn-success float-right">Confirm Order</button>
                         </div>
                     </section>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-7">
                     <section class="card">
                         <div class="card-body">
                             <form action="{{route('search')}}" method="post">
@@ -84,7 +97,10 @@
                             <section class="card">
                                 <div class="pro-img-box">
                                     <img src="{{asset('Uploads/product/'.$product->photo)}}" alt=""/>
-                                    <a href="{{route('product_details',$product->id)}}" class="adtocart">
+{{--                                    <a href="{{route('product_details',$product->id)}}" class="adtocart">--}}
+{{--                                        <i class="fa fa-shopping-cart"></i>--}}
+{{--                                    </a>--}}
+                                    <a href="{{route('addCart',$product->id)}}" class="adtocart">
                                         <i class="fa fa-shopping-cart"></i>
                                     </a>
                                 </div>
@@ -100,6 +116,7 @@
                             </section>
                         </div>
                         @endforeach
+
                     </div>
                 </div>
             </div>

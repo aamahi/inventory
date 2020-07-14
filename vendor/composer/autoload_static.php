@@ -514,6 +514,7 @@ class ComposerStaticInitb862a610b3688bef47c8a15c31b1fedb
         'App\\Http\\Requests\\ProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProductRequest.php',
         'App\\Http\\Requests\\SuppliarRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SuppliarRequest.php',
         'App\\Http\\Requests\\UpdateEmployeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateEmployeRequest.php',
+        'App\\Model\\Cart' => __DIR__ . '/../..' . '/app/Model/Cart.php',
         'App\\Model\\Category' => __DIR__ . '/../..' . '/app/Model/Category.php',
         'App\\Model\\Customar' => __DIR__ . '/../..' . '/app/Model/Customar.php',
         'App\\Model\\Customar_group' => __DIR__ . '/../..' . '/app/Model/Customar_group.php',

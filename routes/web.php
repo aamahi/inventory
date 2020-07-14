@@ -96,3 +96,7 @@ Route::post('/salary','Admin\Salary@paysalary');
 
 
 Route::post('/search','Admin\Product@search')->name('search');
+Route::get('/add/cart/{id}','Admin\Product@addCart')->name('addCart');
+Route::get('/delete/cart/{id}','Admin\Product@deleteCart')->name('deleteCart');
+Route::get('/cancel/cart','Admin\Product@cancelCart')->name('cancelCart');
+Route::get('/stock','Admin\Product@cancelCart')->name('cancelCart');

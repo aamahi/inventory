@@ -35,6 +35,7 @@ return array(
     'App\\Http\\Requests\\ProductRequest' => $baseDir . '/app/Http/Requests/ProductRequest.php',
     'App\\Http\\Requests\\SuppliarRequest' => $baseDir . '/app/Http/Requests/SuppliarRequest.php',
     'App\\Http\\Requests\\UpdateEmployeRequest' => $baseDir . '/app/Http/Requests/UpdateEmployeRequest.php',
+    'App\\Model\\Cart' => $baseDir . '/app/Model/Cart.php',
     'App\\Model\\Category' => $baseDir . '/app/Model/Category.php',
     'App\\Model\\Customar' => $baseDir . '/app/Model/Customar.php',
     'App\\Model\\Customar_group' => $baseDir . '/app/Model/Customar_group.php',
