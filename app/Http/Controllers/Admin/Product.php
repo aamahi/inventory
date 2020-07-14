@@ -92,4 +92,14 @@ class Product extends Controller
     public function product_edit($id){
         echo $id;
     }
+    public function search(Request $request){
+        $this->validate($request,[
+            'product_name'=>'required',
+        ]);
+        $product_name =  $request->product_name;
+
+        $products =  \App\Model\Product::where('product_name','LIKE',"%{$product_name}%")->get();
+        $categories = \App\Model\Category::select('category_name','id')->get();
+        return view('admin.product.search_product',compact('categories','products'));
+    }
 }

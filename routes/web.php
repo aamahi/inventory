@@ -94,3 +94,5 @@ Route::post('/salary','Admin\Salary@paysalary');
 //Route::get('/update_category/{id}','Admin\Category@edit_category')->name('update_category');
 //Route::Post('/update_category/{id}','Admin\Category@update_category');
 
+
+Route::post('/search','Admin\Product@search')->name('search');
