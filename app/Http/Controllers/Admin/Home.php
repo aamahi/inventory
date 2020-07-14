@@ -15,5 +15,9 @@ class Home extends Controller
     public function index(){
         return view('admin.index');
     }
+    public function stock(){
+        $products  = \App\Model\Product::with('category')->latest()->get();
+        return view('admin.product.stock',compact('products'));
+    }
 }
 
