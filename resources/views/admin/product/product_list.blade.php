@@ -9,10 +9,24 @@
                         <header class="card-header">
                             Cart
                         </header>
-                        <div class="card-body">
-                            <select id='selUser' style='width: 200px;'>
+
+                        <form action="{{route('invoice')}}" method="post">
+
+                            @csrf
+                            <div class="card-body">
+                                @if($errors->any())
+                                    @foreach($errors->all() as $error)
+                                        <div class="alert alert-danger alert-dismissible fade show " role="alert">
+                                            {{$error}}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    @endforeach
+                                @endif
+                            <select id='selUser' name="customar_id" style='width: 200px;'>
                                 <option selected disabled>Select Customar</option>
-                                <option value='00'>Unknown Customar</option>
+                                <option value='{{$unknown_customar->id}}'>Unknown Customar</option>
 
                             @foreach($customars as $customar)
                                     <option value='{{$customar->id}}'>{{$customar->customar_name}}({{$customar->phone}})</option>
@@ -66,11 +80,21 @@
                                     <td colspan="2"> Total </td>
                                     <td colspan="2">{{ $total}}</td>
                                 </tr>
+                                <tr class=" text-center">
+                                    <td colspan="2"> Pay </td>
+                                    <td colspan="2"><input type="number" width="100%" name="pay" value="{{$total}}"></td>
+                                </tr>
+                                <tr class=" text-center">
+                                    <td colspan="2"> Due </td>
+                                    <td colspan="2"><input type="number" width="100%" name="due"></td>
+                                </tr>
                                 </tbody>
                             </table>
+                                <input type="hidden" name="total" value="{{$total}}">
                             <a href="{{route('cancelCart')}}" class="btn btn-info">Cancel</a>
-                            <button class="btn btn-success float-right">Confirm Order</button>
+                            <button type="submit" class="btn btn-success float-right">Confirm Order</button>
                         </div>
+                        </form>
                     </section>
                 </div>
                 <div class="col-md-7">

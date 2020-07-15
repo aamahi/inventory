@@ -120,8 +120,9 @@ class Customar extends Controller
     }
 
     public function show_customar($id){
+        $invoices = \App\Model\Invoice::where('customar_id',$id)->orderBy('created_at','DESC')->get();
         $customar = \App\Model\Customar::with('customars')->find($id);
-        return view('admin.customar.show_customar',compact('customar'));
+        return view('admin.customar.show_customar',compact('customar','invoices'));
     }
 
     public function delete_customar($id)

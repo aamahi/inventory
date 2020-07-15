@@ -40,6 +40,8 @@ return array(
     'App\\Model\\Customar' => $baseDir . '/app/Model/Customar.php',
     'App\\Model\\Customar_group' => $baseDir . '/app/Model/Customar_group.php',
     'App\\Model\\Empolye' => $baseDir . '/app/Model/Empolye.php',
+    'App\\Model\\Invoice' => $baseDir . '/app/Model/Invoice.php',
+    'App\\Model\\Invoice_list' => $baseDir . '/app/Model/Invoice_list.php',
     'App\\Model\\Product' => $baseDir . '/app/Model/Product.php',
     'App\\Model\\Suppliar' => $baseDir . '/app/Model/Suppliar.php',
     'App\\Model\\salary' => $baseDir . '/app/Model/salary.php',

@@ -100,3 +100,5 @@ Route::get('/add/cart/{id}','Admin\Product@addCart')->name('addCart');
 Route::get('/delete/cart/{id}','Admin\Product@deleteCart')->name('deleteCart');
 Route::get('/cancel/cart','Admin\Product@cancelCart')->name('cancelCart');
 Route::get('/stock','Admin\Home@stock')->name('stock');
+Route::post('/invoice','Admin\InvoiceController@index')->name('invoice');
+Route::get('/report','Admin\InvoiceController@report')->name('report');

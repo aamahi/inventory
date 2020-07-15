@@ -48,11 +48,12 @@ class Product extends Controller
         return redirect()->route('add_product')->with($notification);
     }
     public function product_list(){
+        $unknown_customar = \App\Model\Customar::select('id','customar_name','phone')->first();
         $customars = \App\Model\Customar::select('id','customar_name','phone')->orderBy('customar_name','ASC')->get();
         $carts = Cart::with('product')->latest()->get();
 //        $categories = \App\Model\Category::select('category_name','id')->get();
         $products = \App\Model\Product::latest()->get();
-        return view('admin.product.product_list',compact('carts','products','customars'));
+        return view('admin.product.product_list',compact('carts','products','customars','unknown_customar'));
     }
     public function product_details($id){
         $categories = \App\Model\Category::select('category_name','id')->get();

@@ -23,8 +23,8 @@ class Customar extends Model
     public function customars(){
         return $this->hasOne('App\Model\Customar_group','id','customar_group_id');
     }
-//    public function customar_group(){
-//        return $this->bel('App\Model\Customar_group','id','category_id');
+//    public function invoices(){
+//        return $this->hasMany(Invoice::class,'customar_id','id');
 //    }
 }
 

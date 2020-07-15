@@ -15,7 +15,7 @@
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Phone</th>
-                                <th>Balance</th>
+{{--                                <th>Balance</th>--}}
                                 <th>Due</th>
                                 <th>Address</th>
                                 <th>Action</th>
@@ -27,7 +27,7 @@
                                 <th><img src="{{asset('Uploads/customar/'.$customar->photo)}}" width="65px;" alt=""></th>
                                 <th>{{$customar->customar_name}}</th>
                                 <th>{{$customar->phone}}</th>
-                                <th>@if($customar->balance==0)0.00 @else {{$customar->balance}} @endif Taka</th>
+{{--                                <th>@if($customar->balance==0)0.00 @else {{$customar->balance}} @endif Taka</th>--}}
                                 <th>@if($customar->due==0)0.00 @else {{$customar->due}} @endif Taka</th>
                                 <th>{{$customar->address}}</th>
                                 <th>

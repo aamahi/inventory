@@ -8,6 +8,12 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li>
+                <a href="{{route('report')}}">
+                    <i class="fa fa-dollar"></i>
+                    <span>Report</span>
+                </a>
+            </li>
             <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-tag"></i>

@@ -519,6 +519,8 @@ class ComposerStaticInitb862a610b3688bef47c8a15c31b1fedb
         'App\\Model\\Customar' => __DIR__ . '/../..' . '/app/Model/Customar.php',
         'App\\Model\\Customar_group' => __DIR__ . '/../..' . '/app/Model/Customar_group.php',
         'App\\Model\\Empolye' => __DIR__ . '/../..' . '/app/Model/Empolye.php',
+        'App\\Model\\Invoice' => __DIR__ . '/../..' . '/app/Model/Invoice.php',
+        'App\\Model\\Invoice_list' => __DIR__ . '/../..' . '/app/Model/Invoice_list.php',
         'App\\Model\\Product' => __DIR__ . '/../..' . '/app/Model/Product.php',
         'App\\Model\\Suppliar' => __DIR__ . '/../..' . '/app/Model/Suppliar.php',
         'App\\Model\\salary' => __DIR__ . '/../..' . '/app/Model/salary.php',
