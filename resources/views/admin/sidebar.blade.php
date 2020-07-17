@@ -9,6 +9,18 @@
                 </a>
             </li>
             <li>
+                <a href="{{route('pos')}}">
+                    <i class="fa fa-dollar"></i>
+                    <span>POS</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('bkash')}}">
+                    <i class="fa fa-tumblr-square"></i>
+                    <span>Bkash</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{route('report')}}">
                     <i class="fa fa-dollar"></i>
                     <span>Report</span>

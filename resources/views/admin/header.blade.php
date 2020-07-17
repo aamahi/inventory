@@ -3,7 +3,7 @@
         <i class="fa fa-bars"></i>
     </div>
     <!--logo start-->
-    <a href="index.html" class="logo">ToDay <span>Shop</span></a>
+    <a href="{{url('/admin')}}" class="logo">ToDay <span>Shop</span></a>
     <!--logo end-->
     <div class="nav notify-row" id="top_menu">
         <!--  notification start -->

@@ -102,3 +102,8 @@ Route::get('/cancel/cart','Admin\Product@cancelCart')->name('cancelCart');
 Route::get('/stock','Admin\Home@stock')->name('stock');
 Route::post('/invoice','Admin\InvoiceController@index')->name('invoice');
 Route::get('/report','Admin\InvoiceController@report')->name('report');
+Route::get('/pos','Admin\InvoiceController@pos')->name('pos');
+Route::get('/bkash','Admin\BkashController@bkash')->name('bkash');
+Route::post('/bkash','Admin\BkashController@addBkash');
+Route::get('/reciveBkash/{id}','Admin\BkashController@reciveBkash')->name('reciveBkash');
+Route::get('/sendBkash/{id}','Admin\BkashController@sendBkash')->name('sendBkash');

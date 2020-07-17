@@ -25,7 +25,7 @@
                             @forelse($invoices as $invoice)
                             <tr>
                                 <th>{{$invoice->created_at->format('d/m/Y')}}</th>
-                                <th>{{$invoice->customar_id}}</th>
+                                <th>{{($invoice->customar)->customar_name}}</th>
                                 <th>{{Auth::user()->name}}</th>
                                  <th>@if($invoice->pay==0)0.00 @else {{$invoice->pay}} @endif Taka</th>
                                  <th>@if($invoice->due==0)0.00 @else {{$invoice->due}} @endif Taka</th>

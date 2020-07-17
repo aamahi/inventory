@@ -27,7 +27,7 @@ class InvoiceController extends Controller
         $invoice['total'] =$request->total;
         $invoice['due'] =$request->due;
         $invoice['pay'] =$request->pay;
-        $invoice['created_at'] =Carbon::now();
+        $invoice['created_at'] =Carbon::now()->toDateString();
         if($request->due){
             \App\Model\Customar::find($request->customar_id)->increment('due', $request->due);
         }
@@ -55,9 +55,17 @@ class InvoiceController extends Controller
         }
 
         public function report(){
-            $invoices = \App\Model\Invoice::latest()->get();
+            $invoices = \App\Model\Invoice::with('customar')->orderBy('id','DESC')->get();
             return view('admin.report',compact('invoices'));
         }
 
 
+    public function pos(){
+        $unknown_customar = \App\Model\Customar::select('id','customar_name','phone')->first();
+        $customars = \App\Model\Customar::select('id','customar_name','phone')->orderBy('customar_name','ASC')->get();
+        $carts = Cart::with('product')->latest()->get();
+//        $categories = \App\Model\Category::select('category_name','id')->get();
+        $products = \App\Model\Product::latest()->get();
+        return view('admin.pos',compact('carts','products','customars','unknown_customar'));
+    }
 }
