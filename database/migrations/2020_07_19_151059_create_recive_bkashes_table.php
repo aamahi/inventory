@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBkashesTable extends Migration
+class CreateReciveBkashesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateBkashesTable extends Migration
      */
     public function up()
     {
-        Schema::create('bkashes', function (Blueprint $table) {
+        Schema::create('recive_bkashes', function (Blueprint $table) {
             $table->id();
-            $table->string('number');
-            $table->integer('amount');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('bkash_id');
+            $table->integer('status')->default(0);
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('bkash_id')->references('id')->on('bkashes')->onDelete('cascade');
         });
     }
 
@@ -30,6 +29,6 @@ class CreateBkashesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bkashes');
+        Schema::dropIfExists('recive_bkashes');
     }
 }

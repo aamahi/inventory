@@ -527,6 +527,8 @@ class ComposerStaticInitb862a610b3688bef47c8a15c31b1fedb
         'App\\Model\\Invoice' => __DIR__ . '/../..' . '/app/Model/Invoice.php',
         'App\\Model\\Invoice_list' => __DIR__ . '/../..' . '/app/Model/Invoice_list.php',
         'App\\Model\\Product' => __DIR__ . '/../..' . '/app/Model/Product.php',
+        'App\\Model\\ReciveBkash' => __DIR__ . '/../..' . '/app/Model/ReciveBkash.php',
+        'App\\Model\\SendBkash' => __DIR__ . '/../..' . '/app/Model/SendBkash.php',
         'App\\Model\\Suppliar' => __DIR__ . '/../..' . '/app/Model/Suppliar.php',
         'App\\Model\\salary' => __DIR__ . '/../..' . '/app/Model/salary.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

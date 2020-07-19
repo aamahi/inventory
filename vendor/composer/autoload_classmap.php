@@ -48,6 +48,8 @@ return array(
     'App\\Model\\Invoice' => $baseDir . '/app/Model/Invoice.php',
     'App\\Model\\Invoice_list' => $baseDir . '/app/Model/Invoice_list.php',
     'App\\Model\\Product' => $baseDir . '/app/Model/Product.php',
+    'App\\Model\\ReciveBkash' => $baseDir . '/app/Model/ReciveBkash.php',
+    'App\\Model\\SendBkash' => $baseDir . '/app/Model/SendBkash.php',
     'App\\Model\\Suppliar' => $baseDir . '/app/Model/Suppliar.php',
     'App\\Model\\salary' => $baseDir . '/app/Model/salary.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
