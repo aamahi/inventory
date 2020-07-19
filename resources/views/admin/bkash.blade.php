@@ -75,39 +75,36 @@
                             <tbody>
                             @foreach($bkashInfo as $bkash)
                             <tr>
-                                <th>{{$bkash->created_at->format('d/m/Y (h:i)')}}</th>
+                                <th>{{$bkash->created_at->format('d/m/Y (h:i-A)')}}</th>
                                 <th>{{$bkash->number}}</th>
                                 <th>{{$bkash->amount}}</th>
-                                <th>@if($bkash->recive=='')<a href="{{route('reciveBkash',$bkash->id)}}" class="btn btn-sm btn-danger">Not Recive</a> @else {{$bkash->recive}} @endif</th>
-                                <th>@if($bkash->send=='')<a href="{{route('sendBkash',$bkash->id)}}" class="btn btn-sm btn-warning">Not Send</a> @else {{$bkash->send}} @endif</th>
-                                <th>{{Auth::User()->name}}</th>
                                 <th>
-                                    <a href=""  class="btn btn-md btn-info" data-toggle="modal" data-toggle="modal" data-target="#exampleModalLong"> <i class="fa fa-eye"> </i> </a>
-                                    <a href="{{route('show_customar',$bkash->id)}}"  class="btn btn-md btn-success" > <i class="fa fa-money"> </i> </a>
-                                    <a href="{{route('update_customar',$bkash->id)}}" class="btn btn-md btn-info"> <i class="fa fa-pencil-square-o"> </i> </a>
-                                    <a href="{{route('delete_customar',$bkash->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> </a>
+                                    @if($bkash->recive)
+                                        @if($bkash->recive==1)
+                                            <a href="{{route('reciveBkash',$bkash->id)}}" class="btn btn-sm btn-danger">Not Recive ({{$bkash->amount}})</a>
+                                        @elseif($bkash->recive==2)
+                                            Recive Customar - {{$bkash->amount}}
+                                        @endif
+                                    @else
+
+                                    @endif
+                                </th>
+                                <th>
+                                    @if($bkash->send)
+                                        @if($bkash->send==1)
+                                            <a href="{{route('sendBkash',$bkash->id)}}" class="btn btn-sm btn-danger">Not Send ({{$bkash->amount}})</a>
+                                        @elseif($bkash->send==2)
+                                           Send - {{$bkash->amount}}
+                                        @endif
+                                     @else
+
+                                     @endif
+                                </th>
+                                <th>{{($bkash->user)->name}}</th>
+                                <th>
+                                   <a href="{{route('deleteBkash',$bkash->id)}}" class="btn btn-md btn-danger delete"> <i class="fa fa-trash-o"> </i> </a>
                                 </th>
                             </tr>
-                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful conten
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             @endforeach
                         </table>
                     </div>

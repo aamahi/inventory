@@ -17,6 +17,8 @@ class CreateBkashesTable extends Migration
             $table->id();
             $table->string('number');
             $table->integer('amount');
+            $table->integer('recive')->nullable();
+            $table->integer('send')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

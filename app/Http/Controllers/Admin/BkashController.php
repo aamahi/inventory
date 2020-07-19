@@ -18,7 +18,7 @@ class BkashController extends Controller
         $this->middleware('auth');
     }
     public function bkash(){
-        $bkashInfo = Bkash::with('send','recive')->latest()->get();
+        $bkashInfo = Bkash::with('user')->latest()->get();
         return view('admin.bkash',compact('bkashInfo'));
 
     }
@@ -33,14 +33,11 @@ class BkashController extends Controller
         $bkash['amount']=$amount;
         $bkash['user_id']=Auth::user()->id;
         $bkash['created_at']=Carbon::now();
-        $bkash_id = Bkash::insertGetId($bkash);
 
         if(''!=$recive){
             if($amount==$recive){
-                $recive_bkash =[];
-                $recive_bkash['bkash_id']= $bkash_id;
-                $recive_bkash['status']= 1;
-                ReciveBkash::insert($recive_bkash);
+                $bkash['recive'] =2;
+                Bkash::insert($bkash);
                 $notification = array(
                     'message' => "Taka Recive by Customar",
                     'alert-type' => 'success'
@@ -56,10 +53,8 @@ class BkashController extends Controller
 
         }elseif(''!=$send){
             if($amount==$send){
-                $send_bkash =[];
-                $send_bkash['bkash_id']= $bkash_id;
-                $send_bkash['status']= 1;
-                SendBkash::insert($send_bkash);
+                $bkash['send'] =2;
+                Bkash::insert($bkash);
                 $notification = array(
                     'message' => "Taka Send to Customar",
                     'alert-type' => 'success'
@@ -73,19 +68,16 @@ class BkashController extends Controller
                 return redirect()->back()->with($notification);
             }
         }elseif (4==strlen($number)){
-            $recive_bkash =[];
-            $recive_bkash['bkash_id']= $bkash_id;
-            ReciveBkash::insert($recive_bkash);
+            $bkash['recive'] = 1;
+            Bkash::insert($bkash);
             $notification = array(
                 'message' => "Taka Dosen't Recive",
                 'alert-type' => 'warning'
             );
             return redirect()->back()->with($notification);
         }elseif (11==strlen($number)){
-            $send_bkash =[];
-            $send_bkash['bkash_id']= $bkash_id;
-//            $send_bkash['status']= 1;
-            SendBkash::insert($send_bkash);
+            $bkash['send'] =1;
+            Bkash::insert($bkash);
             $notification = array(
                 'message' => "Taka Not Send",
                 'alert-type' => 'warning'
@@ -99,27 +91,38 @@ class BkashController extends Controller
         return redirect()->back()->with($notification);
         }
     }
-//    public function reciveBkash($id){
-//        $reciveBkash= Bkash::find($id);
-//        $reciveAmount =  $reciveBkash->amount;
-//        $reciveBkash->recive = $reciveAmount;
-//        $reciveBkash->save();
-//        $notification = array(
-//            'message' => "Recived by Customar",
-//            'alert-type' => 'info'
-//        );
-//        return redirect()->back()->with($notification);
-//    }
-//    public function sendBkash($id){
-//        $sendBkash= Bkash::find($id);
-//        $sendAmount =  $sendBkash->amount;
-//        $sendBkash->recive = $sendAmount;
-//        $sendBkash->save();
-//        $notification = array(
-//            'message' => "Send to Customar",
-//            'alert-type' => 'info'
-//        );
-//        return redirect()->back()->with($notification);
-//    }
+    public function reciveBkash($id){
+        $reciveBkash= Bkash::find($id);
+        $reciveBkash->recive = 2;
+        $reciveBkash->user_id = Auth::user()->id;
+        $reciveBkash->created_at = Carbon::now();
+        $reciveBkash->save();
+        $notification = array(
+            'message' => "Recived by Customar",
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
+    }
+    public function sendBkash($id){
+        $sendBkash= Bkash::find($id);
+        $sendBkash->send = 2;
+        $sendBkash->user_id = Auth::user()->id;
+        $sendBkash->created_at = Carbon::now();
+        $sendBkash->save();
+        $notification = array(
+            'message' => "Send to Customar",
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
+    }
+    public function deleteBkash($id){
+        $sendBkash= Bkash::find($id);
+        $sendBkash->delete();
+        $notification = array(
+            'message' => "Delete Bkash Number",
+            'alert-type' => 'error'
+        );
+        return redirect()->back()->with($notification);
+    }
 
 }

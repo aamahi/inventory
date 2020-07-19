@@ -2,14 +2,12 @@
 
 namespace App\Model;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Bkash extends Model
 {
-    public function recive(){
-        return $this->hasOne(ReciveBkash::class,'bkash_id','id');
-    }
-    public function send(){
-        return $this->hasOne(SendBkash::class,'bkash_id','id');
+    public function user(){
+        return $this->hasOne(User::class,'id','user_id');
     }
 }

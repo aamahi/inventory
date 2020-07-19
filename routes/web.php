@@ -107,3 +107,4 @@ Route::get('/bkash','Admin\BkashController@bkash')->name('bkash');
 Route::post('/bkash','Admin\BkashController@addBkash');
 Route::get('/reciveBkash/{id}','Admin\BkashController@reciveBkash')->name('reciveBkash');
 Route::get('/sendBkash/{id}','Admin\BkashController@sendBkash')->name('sendBkash');
+Route::get('/deleteBkash/{id}','Admin\BkashController@deleteBkash')->name('deleteBkash');
