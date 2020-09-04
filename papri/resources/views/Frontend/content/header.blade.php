@@ -1,15 +1,18 @@
 <!--Top bar area start-->
 <header class="top-bar ">
     <div class="container-fluid">
+        @php
+            $setting = \App\Model\Setting::find(1);
+        @endphp
         <div class="row">
             <div class="col-md-4 font-weight-bold" style="margin-bottom: 10px;">
-                <span class="first-span"><i class="fa fa-map-marker"></i> ২০১ রংমহল টাওয়ার (২য় তলা), বন্দর বাজার, সিলেট</span>
+                <span class="first-span"><i class="fa fa-map-marker"></i> {{$setting->address}}</span>
             </div>
             <div class="col-md-4 font-weight-bold" style="margin-bottom: 10px;">
-                <span class="first-span"><i class="fa fa-phone"></i> +8801751989173 , +8801706225615 </span>
+                <span class="first-span"><i class="fa fa-phone"></i>{{$setting->primaryPhone}} , {{$setting->otherPhone}} </span>
             </div>
             <div class="col-md-4 font-weight-bold" style="margin-bottom: 10px;">
-                <span class="first-span"><i class="fa fa-envelope"></i> hello@abdullahmahi.com , info@papri.it</span>
+                <span class="first-span"><i class="fa fa-envelope"></i>{{$setting->primaryEmail}} , {{$setting->otherEmail}}</span>
 
             </div>
         </div>
@@ -23,7 +26,7 @@
             <div class="col-md-12 col-lg-12 col-xl-2">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="{{asset('frontend/img/lo.png')}}" alt="">
+                        <img src="{{asset('uploads/logo/'.$setting->logo)}}" alt="">
                     </a>
                 </div>
                 <div class="accordion-wrapper hide-sm-up">
@@ -32,7 +35,7 @@
 
                     <ul id="mobilemenu" class="accordion">
                         <li class="mob-logo"><a href="index.html">
-                                <img src="{{asset('frontend/img/lo.png')}}" alt="">
+                                <img src="{{asset('uploads/logo/'.$setting->logo)}}" alt="">
                             </a></li>
                         <li ><a class="closeme" href="#"><i class="fa fa-times" ></i></a></li>
                         <li class="fc-red out-link"><a class="" href="index.html">Home</a></li>

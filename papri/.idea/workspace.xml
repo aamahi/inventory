@@ -33,14 +33,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0734d95-a37f-43cd-b9ac-4321938f121d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/content/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/content/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/layout/clint.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/layout/course.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/layout/service.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/layout/slider.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/layout/staf.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Setting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_03_143226_create_settings_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/logo/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/adminHome.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/content/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/content/navbar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/setting.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.editorconfig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.env.example" beforeDir="false" />
@@ -16168,8 +16167,17 @@
       <change beforePath="$PROJECT_DIR$/../node_modules/yargs/yargs.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/papri.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/papri.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/content/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/content/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../public/.htaccess" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../public/asset/assets/advanced-datatable/media/css/demo_page.css" beforeDir="false" />
@@ -24579,6 +24587,7 @@
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gwtKZwnHovKr5CckuvJtYYkWjU" />
@@ -24590,9 +24599,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -24603,6 +24613,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/Admin" />
       <recent name="$PROJECT_DIR$/resources/views/Frontend" />
     </key>
   </component>
@@ -24624,7 +24635,8 @@
       <workItem from="1599058046967" duration="101000" />
       <workItem from="1599059598695" duration="267000" />
       <workItem from="1599060783159" duration="260000" />
-      <workItem from="1599123340661" duration="3266000" />
+      <workItem from="1599123340661" duration="11903000" />
+      <workItem from="1599206502737" duration="1416000" />
     </task>
     <servers />
   </component>
@@ -24643,10 +24655,25 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1599126123819">
+    <state x="436" y="117" width="553" height="568" key="NewPhpClassDialog" timestamp="1599127945255">
       <screen x="70" y="27" width="1296" height="741" />
     </state>
-    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup/70.27.1296.741@70.27.1296.741" timestamp="1599126123819" />
+    <state x="436" y="117" width="553" height="568" key="NewPhpClassDialog/70.27.1296.741@70.27.1296.741" timestamp="1599127945255" />
+    <state x="328" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1599145313365">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="328" y="27" width="770" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/70.27.1296.741@70.27.1296.741" timestamp="1599145313365" />
+    <state x="170" y="127" width="1096" height="541" key="dock-window-1" timestamp="1599128027373">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="170" y="127" width="1096" height="541" key="dock-window-1/70.27.1296.741@70.27.1296.741" timestamp="1599128027373" />
+    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1599206605007">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup/70.27.1296.741@70.27.1296.741" timestamp="1599206605007" />
   </component>
 </project>
