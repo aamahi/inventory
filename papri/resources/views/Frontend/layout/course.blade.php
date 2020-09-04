@@ -61,7 +61,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-sm-6 col-xl-3">
                     <div class="sin-upc-event-two">
                         <!-- <div class="sp-age bg-sky">
@@ -77,7 +76,22 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+{{--            <div class="row">--}}
+{{--                <div class="col-xl-5">--}}
+{{--                    <button class="area-heading">All Course</button>--}}
+{{--                    <h2 class="area-heading font-red">Our Course<img src="{{asset('frontend/img/icon/pen-green.png')}}" alt=""></h2>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-2">--}}
+{{--                                        <button class="area-heading">All Course</button>--}}
+{{--                    --}}{{--                    <h2 class="area-heading font-red">Our Course<img src="{{asset('frontend/img/icon/pen-green.png')}}" alt=""></h2>--}}
+{{--                </div>--}}
+{{--                <div class="col-xl-5">--}}
+{{--                    <button class="area-heading">All Course</button>--}}
+{{--                    <h2 class="area-heading font-red">Our Course<img src="{{asset('frontend/img/icon/pen-green.png')}}" alt=""></h2>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </div>
 </section>

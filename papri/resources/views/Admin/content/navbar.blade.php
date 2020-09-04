@@ -15,9 +15,33 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('setting')}}">
+                <a href="{{route('banner')}}">
                     <i class="fa fa-picture-o"></i>
                     <span>Banner</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('clint')}}">
+                    <i class="fa fa-edit"></i>
+                    <span>Clint</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('ceo')}}">
+                    <i class="fa fa-user-md"></i>
+                    <span>CEO Massage</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('contract')}}">
+                    <i class="fa fa-phone"></i>
+                    <span>Contract</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('about')}}">
+                    <i class="fa fa-user"></i>
+                    <span>About</span>
                 </a>
             </li>
 

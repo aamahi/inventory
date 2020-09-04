@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-12 col-xl-2">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="{{route('frontendHome')}}">
                         <img src="{{asset('uploads/logo/'.$setting->logo)}}" alt="">
                     </a>
                 </div>
@@ -34,12 +34,12 @@
                     <!--Mobile Menu start-->
 
                     <ul id="mobilemenu" class="accordion">
-                        <li class="mob-logo"><a href="index.html">
+                        <li class="mob-logo"><a href="{{route('frontendHome')}}">
                                 <img src="{{asset('uploads/logo/'.$setting->logo)}}" alt="">
                             </a></li>
                         <li ><a class="closeme" href="#"><i class="fa fa-times" ></i></a></li>
-                        <li class="fc-red out-link"><a class="" href="index.html">Home</a></li>
-                        <li class="fc-sky out-link"><a class="" href="index.html">About</a></li>
+                        <li class="fc-red out-link"><a class="" href="{{route('frontendHome')}}">Home</a></li>
+                        <li class="fc-sky out-link"><a class="" href="{{route('frontendAbout')}}">About</a></li>
                         <li>
                             <div class="link font-orange">Service<i class="fa fa-chevron-down"></i></div>
                             <ul class="submenu font-orange">
@@ -66,10 +66,10 @@
                             <div class="link font-per"><a href="about-us.html">Our Clint</a></div>
 
                         </li>
-                        <li class="fc-red out-link"><a class="" href="index.html">Contact</a></li>
+                        <li class="fc-red out-link"><a class="" href="{{route('frontendContact')}}">Contact</a></li>
                         <li>
                             <div class="top-contact-btn">
-                                <a href="contact.html" class="kids-care-btn bg-sky">Get Startd</a>
+                                <a href="{{route('frontendContact')}}" class="kids-care-btn bg-sky">Get Startd</a>
                             </div>
                         </li>
 
@@ -85,10 +85,10 @@
             <div class="col-md-9 col-lg-9 col-xl-8">
                 <div class="mainmenu float-right">
                     <ul id="navigation">
-                        <li class="fc-orange hav-sub"><a href="contact.html">Home</a></li>
+                        <li class="fc-orange hav-sub"><a href="{{route('frontendHome')}}">Home</a></li>
 
-                        <li class="fc-sky hav-sub"><a href="contact.html">About us</a></li>
-                        <li class="fc-green"><a href="index.html">Service<i class="fa fa-angle-down" ></i> </a>
+                        <li class="fc-sky hav-sub"><a href="{{route('frontendAbout')}}">About us</a></li>
+                        <li class="fc-green"><a href="{{route('frontendHome')}}">Service<i class="fa fa-angle-down" ></i> </a>
                             <ul class="sub-menu">
                                 <li><a href="course.html">Professional It Training</a></li>
                                 <li><a href="course.html">Domain & Hosting</a></li>
@@ -97,7 +97,7 @@
                                 <li><a href="course.html">Softwear Development</a></li>
                             </ul>
                         </li>
-                        <li class="fc-red"><a href="index.html">Course<i class="fa fa-angle-down" ></i> </a>
+                        <li class="fc-red"><a href="{{route('frontendHome')}}">Course<i class="fa fa-angle-down" ></i> </a>
                             <ul class="sub-menu">
                                 <li><a href="course.html">Basic Computer Concept</a></li>
                                 <li><a href="course.html">Advanced Office Application</a></li>
@@ -106,8 +106,8 @@
                                 <li><a href="course.html">Wordpress Development</a></li>
                             </ul>
                         </li>
-                        <li class="fc-per hav-sub"><a href="contact.html">Our Clint</a></li>
-                        <li class="fc-sky hav-sub"><a href="contact.html">Contact us</a></li>
+                        <li class="fc-per hav-sub"><a href="{{route('frontendContact')}}">Our Clint</a></li>
+                        <li class="fc-sky hav-sub"><a href="{{route('frontendContact')}}">Contact us</a></li>
                     </ul>
                 </div>
             </div>
@@ -115,7 +115,7 @@
             <div class="col-lg-3 col-xl-2">
                 <div class="serch-wrapper float-right hide-sm">
                     <div class="top-contact-btn align-middle">
-                        <a href="contact.html" class="kids-care-btn bg-sky">Get Start</a>
+                        <a href="{{route('frontendContact')}}" class="kids-care-btn bg-sky">Get Start</a>
                     </div>
                 </div>
             </div>

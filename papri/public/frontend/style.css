@@ -19,7 +19,7 @@
 	7. INFANT PAGE
 	8. STAFF PAGE
 	9. TUTION AND FEE PAGE
-   10. SHOP PAGE 
+   10. SHOP PAGE
    11. SINGLE PRODUCT PAGE
    12. MOBILE MENU
    13. CONTACT PAGE
@@ -483,7 +483,7 @@ padding-bottom: 5px;
     top: 100%;
     opacity: 1;
     -webkit-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;    
+	transition: all 0.3s ease 0s;
 }
 .sub-menu li a{position: relative}
 .sub-menu li a::before {
@@ -662,14 +662,14 @@ padding-bottom: 5px;
 	font-size: 40px;
     font-family: 'Museo-700';
 }
-.bg-1{
-	background-image: url(img/slider/slider-2.jpg);
-	position: relative;
-	width: 100%;
-	height: 700px;
-	background-size: cover;
-	background-position: center;
-}
+/*.bg-1{*/
+/*	background-image: url(img/slider/slider-2.jpg);*/
+/*	position: relative;*/
+/*	width: 100%;*/
+/*	height: 700px;*/
+/*	background-size: cover;*/
+/*	background-position: center;*/
+/*}*/
 .slider-text.sldr-two {
 	text-align: left;
 	padding-left: 110px;
@@ -699,7 +699,6 @@ padding-bottom: 5px;
 	background-position: center;
 }
 .bg-6{
-	background-image: url(img/slider/slider9.jpg);
 	position: relative;
 	width: 100%;
 	height: 700px;
@@ -1039,7 +1038,7 @@ padding-bottom: 5px;
     -moz-transition:all 0.2s ;
     -o-transition:all 0.2s ;
     transition: all 0.2s ;
-    
+
 }
 .teacher-img {
 	overflow: hidden;
@@ -1323,7 +1322,7 @@ padding-bottom: 5px;
     opacity: 1;
     -webkit-transition: .25s ease-out;
 	transition: .25s ease-out;
-    
+
 }
 .gallery-content p {
     font-size: 15px;
@@ -1332,7 +1331,7 @@ padding-bottom: 5px;
 	transform: translateY(50px);
     -webkit-transition-delay: .1s;
     transition-delay: .1s;
-   
+
 }
 .sin-gallery:hover p {
     -webkit-transform: translateY(0px);
@@ -1341,7 +1340,7 @@ padding-bottom: 5px;
       -webkit-transition: .25s ease-out;
 	transition: .25s ease-out;
     margin-top: -5px;
-    
+
 }
 
 .gallery-content a {
@@ -1840,7 +1839,7 @@ th,.table-time{color: #333333;font-family: 'Museo-300';background-color: #fff}
     opacity: 1;
     -webkit-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
-    
+
 }
 .mainmenu-two .sub-menu a {
 	padding: 10px;
@@ -2066,7 +2065,7 @@ mainmenu-two .mega-catagory.mega-img {
 	background-position: center;
 	background-size: cover;
     -webkit-box-shadow: 0px 25px 40px 0px rgba(63, 85, 97, 0.25);
-            box-shadow: 0px 25px 40px 0px rgba(63, 85, 97, 0.25); 
+            box-shadow: 0px 25px 40px 0px rgba(63, 85, 97, 0.25);
 }
 .facilities-area {
 	background-image: url(img/bg/facilities-bg.png);
@@ -2286,7 +2285,7 @@ mainmenu-two .mega-catagory.mega-img {
 	text-align: center;
 	top: -45px;
 }
- 
+
 .parent-say-content.owl-theme .owl-controls .owl-dot span {
 	background: #ff8581 none repeat scroll 0 0;
     opacity: 1;
@@ -2380,7 +2379,7 @@ mainmenu-two .mega-catagory.mega-img {
 .newsletter-two{min-height: 170px;
     background-image: url(img/bg/news-letter-bg-2.jpg);background-repeat: repeat-x;
     background-position: center;
-    
+
 }
 .newsletter-two span {
 	font-size: 40px;
@@ -2435,13 +2434,13 @@ mainmenu-two .mega-catagory.mega-img {
 	-moz-transition: all 0.9s;
 	-o-transition: all 0.9s;
 	transition: all 0.9s;
-    
+
 }
 .sin-quick-con:hover .sin-co-img{box-shadow:2px 14px 21px #c6c1c1 ;-webkit-box-shadow:2px 14px 21px #c6c1c1 ; transform: translateY(0px);
     -webkit-transition: all 0.3s ease-in;
 	-moz-transition: all 0.3s ease-in;
 	-o-transition: all 0.3s ease-in;
-	transition: all 0.3s ease-in;} 
+	transition: all 0.3s ease-in;}
 .sin-quick-con h4 {
 	font-size: 20px;
 	text-transform: uppercase;
@@ -2742,7 +2741,7 @@ background-position: center;background-size: cover;background-position: center;
     background-image: url(img/bg/Kindergarten-top-con.jpg);
 	background-repeat: no-repeat;
 	background-position: bottom right;
-	
+
 }
 /*-----Kindergarten routine area css-------------*/
 
@@ -2817,7 +2816,7 @@ background-position: center;background-size: cover;background-position: center;
 	background-size: cover;
     padding: 80px 0px;
     text-align: center
-    
+
 }
 .send-message-area input,.send-message-area select {
 	width: 100%;
@@ -3322,7 +3321,7 @@ background-position: center;background-size: cover;background-position: center;
 .staff-soc ul li a:hover {
 	-webkit-box-shadow: -3px 4px 1px 0px rgba(223, 223, 223, 0.4);
 	        box-shadow: -3px 4px 1px 0px rgba(223, 223, 223, 0.4);
-	
+
 }
 .staff-soc ul li.fab a {background: #3a5897}
 .staff-soc ul li.tw a {background: #49c9f2}
@@ -3539,7 +3538,7 @@ background-position: center;background-size: cover;background-position: center;
 	font-size: 25px;
 	color: #444;
 	font-family: 'Museo-500';
-	
+
 }
 .tution-top .heading-style-two{margin-bottom: 25px;}
 .tution-top h6 {
@@ -3616,8 +3615,8 @@ background-position: center;background-size: cover;background-position: center;
 	line-height: 32px;
     font-family: 'Museo-300';
 }
-.sin-tab-fot p:nth-child(1){color: #8373ce} 
-.sin-tab-fot p:nth-child(3){color: #03a9f4} 
+.sin-tab-fot p:nth-child(1){color: #8373ce}
+.sin-tab-fot p:nth-child(3){color: #03a9f4}
 .sin-tab-fot {padding-bottom: 25px;
 }
 .tution-top {padding-top: 100px;}
@@ -3718,7 +3717,7 @@ a.pro-title {
 }
 .sin-product:hover .pro-bottom:after{right: 0px;left: 0; -webkit-transition: all 0.5s ease 0s;
 	-o-transition: all 0.5s ease 0s;
-	transition: all 0.5s ease 0s;} 
+	transition: all 0.5s ease 0s;}
 .sin-product {
 	margin-bottom: 30px;
 }
@@ -3982,8 +3981,8 @@ box-shadow: -1px -1px 4px -1px rgba(8,8,8,0.71);
 	bottom: 30px;
 	opacity: 1;
 	visibility: visible;
-    
-} 
+
+}
 /*----------------------------------------*/
 /*  10.  Product page css
 /*----------------------------------------*/
@@ -4797,7 +4796,7 @@ height: 390px;
 	background: #fff;
 	padding: 15px;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
-            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06); 
+            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
     position: relative;
 }
 .post-details {padding: 0 20px;}
@@ -4912,7 +4911,7 @@ text-align: center;}
 	margin: 0;
 	margin-top: 45px;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
-            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06); 
+            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
 }
 .sin-realated-post img {
 	border: 10px solid #efefef;
@@ -4929,7 +4928,7 @@ text-align: center;}
 	margin: 0;
 	margin-top: 45px;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
-            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06); 
+            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
 }
 .comment-reply-link {
 	float: right;
@@ -4946,7 +4945,7 @@ text-align: center;}
 	margin: 0;
 	margin-top: 45px;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
-            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06); 
+            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
 }
 .comments-form input {
 	width: 100%;
@@ -5012,7 +5011,7 @@ text-align: center;}
 	margin-bottom: 30px;
 	padding: 40px 30px;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
-            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06); 
+            box-shadow: 0px 0px 8px 0px rgba(85, 85, 85, 0.06);
 }
 .top-writer {
 	text-align: center;
@@ -5112,7 +5111,7 @@ text-align: center;}
     100% {
         transform: rotate(0deg);
     }
-    
+
 }
 .single-to-do:hover .to-do-img {
     animation: rotate 0.5s;
@@ -5149,11 +5148,11 @@ text-align: center;}
   top: 0px;
   width: 100%;
     height: 100%;
-  z-index: 99999999999; 
+  z-index: 99999999999;
 }
 /*----------------------------------------*/
 /*  16.  Home page three
-/*----------------------------------------*/ 
+/*----------------------------------------*/
 
 .top-bar.style-three {
 	background: #ddd609;
@@ -5327,7 +5326,7 @@ position: relative;
 	left: 0;
 	top: -52px;
 	z-index: 0;
-    
+
 }
 .class-name h5 {
 	font-size: 20px;
@@ -5346,7 +5345,7 @@ position: relative;
 	left: 0;
 	top: -52px;
 	z-index: 0;
-    
+
 }
 .class-img-two {
 	padding: 10px;
@@ -5390,7 +5389,7 @@ position: relative;
 	text-align: center;
 	padding-top: 0;
 	padding-bottom: 30px;
-    
+
 }
 .single-teacher.style-b {
 	background: #fff;
@@ -5567,7 +5566,7 @@ position: relative;
 	transition: all 0.6s;
 }
 .sin-pop-tes:hover .pt-img::after {
-	
+
 	top: 93px;
 	left: 41px;
 
@@ -5666,7 +5665,7 @@ position: relative;
 	padding-top: 105px;
 }
 .kids-care-gallery.style-three .filter-menu li {background: #325713;}
-.kids-care-gallery.style-three .filter-menu li:hover,.kids-care-gallery.style-three .filtr-active {background: #244806 !important;} 
+.kids-care-gallery.style-three .filter-menu li:hover,.kids-care-gallery.style-three .filtr-active {background: #244806 !important;}
 .kids-care-gallery.style-three::after {
     content: '';
     position: absolute;
@@ -5715,7 +5714,7 @@ position: relative;
 .aut-date a span {
 	color: #80817e;
 	font-size: 15px;
-	
+
 	padding: 0 10px;
 }
 .aut-date a{border-right: 1px solid #80817e;}
@@ -6074,7 +6073,7 @@ position: relative;
 .kids-care-gallery.style-two{background-image: none}
 
 .sin-gallery .gallery-overlay {
-    padding: 0px; 
+    padding: 0px;
 }
 .sin-gallery.style-b:hover img {
 	opacity: 0.2;
@@ -6110,7 +6109,7 @@ position: relative;
 	margin-bottom: 5px;
 }
 .sin-gallery.style-b > a{color: #919889;}
-.sin-gallery.style-b > a i{margin-right: 5px;} 
+.sin-gallery.style-b > a i{margin-right: 5px;}
 .kids-care-gallery.style-two {
 	background-image: none;
 	background: #f8f8f8;
@@ -6125,7 +6124,7 @@ position: relative;
 }
 
 /*----------------------------------------*/
-/*  20.  Home page four 
+/*  20.  Home page four
 /*----------------------------------------*/
 
 
@@ -6140,7 +6139,7 @@ position: relative;
 }
 
 /*----------------------------------------*/
-/*  21.  Home page five 
+/*  21.  Home page five
 /*----------------------------------------*/
 
 
@@ -6156,7 +6155,7 @@ position: relative;
 .logo-area-style-two.top-border{position: relative}
 
 /*----------------------------------------*/
-/*  22.  Admission page  
+/*  22.  Admission page
 /*----------------------------------------*/
 
 .sin-admision-proc {
@@ -6242,7 +6241,7 @@ input.full-width{width: 96%}
 	z-index: -1;
 }
 /*----------------------------------------*/
-/*  23.  Home page six   
+/*  23.  Home page six
 /*----------------------------------------*/
 
 .top-bar.bg-per .first-span {
@@ -6263,7 +6262,7 @@ input.full-width{width: 96%}
 }
 
 /*----------------------------------------*/
-/*  24.  Home page Nine   
+/*  24.  Home page Nine
 /*----------------------------------------*/
 
  .mainmenu.style-4 > ul > li > img {
@@ -6278,7 +6277,7 @@ input.full-width{width: 96%}
 }
 
 /*----------------------------------------*/
-/*  25.  Home page Ten   
+/*  25.  Home page Ten
 /*----------------------------------------*/
 
 .bg-red  .first-span{
@@ -6324,7 +6323,7 @@ input.full-width{width: 96%}
 	left: 0;
 }
 /*----------------------------------------*/
-/*  25.  404 page    
+/*  25.  404 page
 /*----------------------------------------*/
 
 .four-zero-page {
@@ -6346,15 +6345,15 @@ h2{
 	padding: 20px;
   }
   /* Slider */
-  
+
   .slick-slide {
 	  margin: 0px 20px;
   }
-  
+
   .slick-slide img {
 	  width: 100%;
   }
-  
+
   .slick-slider
   {
 	  position: relative;
@@ -6370,7 +6369,7 @@ h2{
 		  touch-action: pan-y;
 	  -webkit-tap-highlight-color: transparent;
   }
-  
+
   .slick-list
   {
 	  position: relative;
@@ -6388,7 +6387,7 @@ h2{
 	  cursor: pointer;
 	  cursor: hand;
   }
-  
+
   .slick-slider .slick-track,
   .slick-slider .slick-list
   {
@@ -6398,7 +6397,7 @@ h2{
 		   -o-transform: translate3d(0, 0, 0);
 			  transform: translate3d(0, 0, 0);
   }
-  
+
   .slick-track
   {
 	  position: relative;
@@ -6420,7 +6419,7 @@ h2{
   {
 	  visibility: hidden;
   }
-  
+
   .slick-slide
   {
 	  display: none;
