@@ -8,6 +8,26 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li class="sub-menu">
+                <a href="">
+                    <i class="fa fa-pencil"></i>
+                    <span>Course</span>
+                </a>
+                <ul class="sub">
+{{--                    <li><a  href="{{route('addCours')}}">Add New Course</a></li>--}}
+                </ul>
+            </li>
+            <li class="sub-menu">
+                <a href="">
+                    <i class="fa fa-paperclip"></i>
+                    <span>Service</span>
+                </a>
+                <ul class="sub">
+                    <li><a  href="{{route('addService')}}">Add New Service</a></li>
+                    <li><a  href="{{route('allService')}}">All Service</a></li>
+                </ul>
+            </li>
+
             <li>
                 <a href="{{route('setting')}}">
                     <i class="fa fa-cogs"></i>
@@ -45,15 +65,6 @@
                 </a>
             </li>
 
-            <li class="sub-menu">
-                <a href="">
-                    <i class="fa fa-cogs"></i>
-                    <span>Setting</span>
-                </a>
-                <ul class="sub">
-                    <li><a  href="grids.html">Grids</a></li>
-                </ul>
-            </li>
 
         </ul>
         <!-- sidebar menu end-->

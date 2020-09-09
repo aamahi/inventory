@@ -9,75 +9,25 @@
         </div>
         <div class="inner-container">
             <div class=" row">
-
                 <!--Single class start-->
-                <div class="col-sm-6 col-xl-3">
+                @foreach($services as $service)
+                    <div class="col-sm-6 col-xl-3">
                     <div class="single-class  wow fadeInUp" data-wow-delay=".4s">
-                        <img src="{{asset('frontend/img/class/class1.jpg')}}" alt="">
+                        <img src="{{asset('uploads/service/'.$service->photo)}}" alt="">
 
                         <div class="intro">
                             <div class="intro-left">
-                                <h3><a href="">Softwear Development</a></h3>
+                                <h3><a href="">{{$service->title}}</a></h3>
                             </div>
                         </div>
                         <div class="details">
-                            <p>Class aptent taciti sociosqu adtora torq uent per cbia mauris eros nostra.Class aptent taciti sociosqu adtora torq uent per conubia mauris eros nostra.</p>
-                            <a href="#" class="kids-care-btn bgc-orange">Details </a>
+                            <p>{{Str::limit($service->details,180)}}</p>
+                            <a href="{{route('serviceDetails',$service->id)}}" class="kids-care-btn bgc-orange">Details </a>
                         </div>
                     </div>
                 </div>
+               @endforeach
 
-                <!--Single class start-->
-                <div class="col-sm-6 col-xl-3">
-                    <div class="single-class  wow fadeInUp" data-wow-delay=".6s">
-                        <img src="{{asset('frontend/img/class/class1.jpg')}}" alt="">
-
-                        <div class="intro">
-                            <div class="intro-left">
-                                <h3><a href="">Web Desing</a></h3>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <p>Class aptent taciti sociosqu adtora torq uent per cbia mauris eros nostra.Class aptent taciti sociosqu adtora torq uent per conubia mauris eros nostra.</p>
-                            <a href="#" class="kids-care-btn bgc-orange">Details </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Single class start-->
-                <div class="col-xl-3 col-sm-6">
-                    <div class="single-class  wow fadeInUp" data-wow-delay=".8s">
-                        <img src="{{asset('frontend/img/class/class2.jpg')}}" alt="">
-
-                        <div class="intro">
-                            <div class="intro-left">
-                                <h3><a href="">Graphics Solution</a></h3>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <p>Class aptent taciti sociosqu adtora torq uent per cbia mauris eros nostra.Class aptent taciti sociosqu adtora torq uent per conubia mauris eros nostra.</p>
-                            <a href="#" class="kids-care-btn bgc-orange">Details </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!--Single class start-->
-                <div class="col-xl-3 col-sm-6">
-                    <div class="single-class  wow fadeInUp" data-wow-delay=".99s">
-                        <img src="{{asset('frontend/img/class/class2.jpg')}}" alt="">
-
-                        <div class="intro">
-                            <div class="intro-left">
-                                <h3><a href="">Color Match</a></h3>
-                            </div>
-                        </div>
-                        <div class="details">
-                            <p>Class aptent taciti sociosqu adtora torq uent per cbia mauris eros nostra.Class aptent taciti sociosqu adtora torq uent per conubia mauris eros nostra.</p>
-                            <a href="#" class="kids-care-btn bgc-orange">Details</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 

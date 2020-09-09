@@ -6,6 +6,7 @@ use App\Model\About;
 use App\Model\CeoMessage;
 use App\Model\Clint;
 use App\Model\Contract;
+use App\Model\Service;
 use App\Model\Setting;
 use App\Model\Slider;
 use Carbon\Carbon;
@@ -14,10 +15,11 @@ use Illuminate\Http\Request;
 class FrontendController extends Controller
 {
     public function index(){
+        $services = Service::latest()->paginate(4);
         $clints = Clint::latest()->get();
         $sliders = Slider::latest()->get();
         $ceo = CeoMessage::find(1);
-        return view('Frontend.home',compact('sliders','clints','ceo'));
+        return view('Frontend.home',compact('sliders','clints','ceo','services'));
     }
     public function contact(){
         $info = Setting::find(1);
@@ -41,5 +43,9 @@ class FrontendController extends Controller
     public function about(){
         $about = About::find(1);
         return view('Frontend.about',compact('about'));
+    }
+    public function serviceDetails($id){
+        $service = Service::find($id);
+        return view('Frontend.serviceDetails',compact('service'));
     }
 }

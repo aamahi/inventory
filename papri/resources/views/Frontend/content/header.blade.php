@@ -44,11 +44,9 @@
                             <div class="link font-orange">Service<i class="fa fa-chevron-down"></i></div>
                             <ul class="submenu font-orange">
                                 <!--  <li><h4>Nursery</h4></li>-->
-                                <li><a href="course.html">Professional It Training</a></li>
-                                <li><a href="course.html">Domain & Hosting</a></li>
-                                <li><a href="course.html">Web desing and Development</a></li>
-                                <li><a href="course.html">Graphics Solution</a></li>
-                                <li><a href="course.html">Softwear Development</a></li>
+                                @foreach(\App\Model\Service::all() as $service)
+                                    <li><a href="{{route('serviceDetails',$service->id)}}">{{$service->title}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
 
@@ -90,11 +88,9 @@
                         <li class="fc-sky hav-sub"><a href="{{route('frontendAbout')}}">About us</a></li>
                         <li class="fc-green"><a href="{{route('frontendHome')}}">Service<i class="fa fa-angle-down" ></i> </a>
                             <ul class="sub-menu">
-                                <li><a href="course.html">Professional It Training</a></li>
-                                <li><a href="course.html">Domain & Hosting</a></li>
-                                <li><a href="course.html">Web desing and Development</a></li>
-                                <li><a href="course.html">Graphics Solution</a></li>
-                                <li><a href="course.html">Softwear Development</a></li>
+                                @foreach(\App\Model\Service::all() as $service)
+                                    <li><a href="{{route('serviceDetails',$service->id)}}">{{$service->title}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="fc-red"><a href="{{route('frontendHome')}}">Course<i class="fa fa-angle-down" ></i> </a>

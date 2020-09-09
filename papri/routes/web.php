@@ -17,6 +17,7 @@ Route::get('/','FrontendController@index')->name('frontendHome');
 Route::get('/contact','FrontendController@contact')->name('frontendContact');
 Route::post('/contact','FrontendController@senContact');
 Route::get('/about','FrontendController@about')->name('frontendAbout');
+Route::get('/service/details/{id}','FrontendController@serviceDetails')->name('serviceDetails');
 
 Auth::routes();
 
@@ -39,4 +40,17 @@ Route::prefix('admin')->group(function (){
 
     Route::get('/about','BackendController@about')->name('about');
     Route::post('/about','BackendController@aboutUpdate');
+
+    Route::get('add/course','CourseController@addCourse')->name('addCourse');
+    Route::post('add/course','CourseController@addCoursePro');
+//    Route::post('/course','CourseController@addCourse');
+
+
+    Route::get('/add/service','ServiceController@addService')->name('addService');
+    Route::post('/add/service','ServiceController@addServicePro');
+    Route::get('Service','ServiceController@service')->name('allService');
+    Route::get('delete/Service/{id}','ServiceController@deleteService')->name('deleteService');
+    Route::get('edit/Service/{id}','ServiceController@editService')->name('editService');
+    Route::get('edit/Service/{id}','ServiceController@editService')->name('editService');
+    Route::post('edit/Service/{id}','ServiceController@updateService');
 });

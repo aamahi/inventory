@@ -19,6 +19,10 @@
     <!--right slidebar-->
     <link href="{{asset('admin/css/slidebars.css')}}" rel="stylesheet">
 
+
+    <!--  summernote -->
+    <link href="{{asset('admin/assets/summernote/dist/summernote.css')}}" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('admin/css/style-responsive.css')}}" rel="stylesheet" />
@@ -61,10 +65,29 @@
     <script src="{{asset('admin/js/jquery.nicescroll.js')}}" type="text/javascript"></script>
     <script src="{{asset('admin/js/respond.min.js')}}" ></script>
 
-    <!--common script for all pages-->
+    <!--summernote-->
+    <script src="{{asset('admin/assets/summernote/dist/summernote.min.js')}}"></script>
+
+
+  <!--common script for all pages-->
     <script src="{{asset('admin/js/common-scripts.js')}}"></script>
 
 
+  <script>
+
+      jQuery(document).ready(function(){
+
+          $('.summernote').summernote({
+              height: 200,                 // set editor height
+
+              minHeight: null,             // set minimum height of editor
+              maxHeight: null,             // set maximum height of editor
+
+              focus: true                 // set focus to editable area after initializing summernote
+          });
+      });
+
+  </script>
 
   </body>
 </html>
