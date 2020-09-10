@@ -33,17 +33,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0734d95-a37f-43cd-b9ac-4321938f121d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Model/Service.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_07_151806_create_services_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/service/service50040735_200907.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/addCourse.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/addService.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/advanced_form_components.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/editService.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/service.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/serviceDetails.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Course.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_09_09_160136_create_courses_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/course/course14042109_200909.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/course/course16044521_200909.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/service/service17095239_200909.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/service/service21100011_200909.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/service/service69094738_200909.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/service/service74095128_200909.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/service/service8095504_200909.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/banner200909_09422648.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/slider/banner200909_09423342.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/course.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/editCourse.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Frontend/courseDetails.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.editorconfig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.env.example" beforeDir="false" />
@@ -16172,12 +16175,19 @@
       <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/service/service28091025_200909.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/service/service50090911_200909.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/slider/banner200904_1017129.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/slider/banner200904_10312298.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/addCourse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/addCourse.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/content/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/content/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Frontend/content/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/content/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/course.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/course.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Frontend/layout/course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/layout/course.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/layout/service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/layout/service.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../public/.htaccess" beforeDir="false" />
@@ -24603,7 +24613,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -24614,8 +24624,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/Frontend" />
       <recent name="$PROJECT_DIR$/resources/views/Admin" />
+      <recent name="$PROJECT_DIR$/resources/views/Frontend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/uploads/course" />
     </key>
   </component>
   <component name="RunManager">
@@ -24644,7 +24657,10 @@
       <workItem from="1599409277398" duration="584000" />
       <workItem from="1599485433747" duration="1080000" />
       <workItem from="1599487051863" duration="7141000" />
-      <workItem from="1599640909372" duration="2955000" />
+      <workItem from="1599640909372" duration="3192000" />
+      <workItem from="1599664993820" duration="681000" />
+      <workItem from="1599666249046" duration="4182000" />
+      <workItem from="1599728247831" duration="3640000" />
     </task>
     <servers />
   </component>
@@ -24671,10 +24687,10 @@
       <screen x="70" y="27" width="1296" height="741" />
     </state>
     <state x="176" y="40" width="1084" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/70.27.1296.741@70.27.1296.741" timestamp="1599213398729" />
-    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599494421614">
+    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599669254566">
       <screen x="70" y="27" width="1296" height="741" />
     </state>
-    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1296.741@70.27.1296.741" timestamp="1599494421613" />
+    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1296.741@70.27.1296.741" timestamp="1599669254566" />
     <state x="436" y="117" width="553" height="568" key="NewPhpClassDialog" timestamp="1599127945255">
       <screen x="70" y="27" width="1296" height="741" />
     </state>
@@ -24687,10 +24703,10 @@
       <screen x="70" y="27" width="1296" height="741" />
     </state>
     <state x="170" y="127" width="1096" height="541" key="dock-window-1/70.27.1296.741@70.27.1296.741" timestamp="1599128027373" />
-    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1599644018157">
+    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1599731792330">
       <screen x="70" y="27" width="1296" height="741" />
     </state>
-    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup/70.27.1296.741@70.27.1296.741" timestamp="1599644018157" />
+    <state x="381" y="89" width="672" height="678" key="search.everywhere.popup/70.27.1296.741@70.27.1296.741" timestamp="1599731792330" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -24702,8 +24718,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/Admin/addCourse.blade.php</url>
-          <line>67</line>
+          <line>62</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Frontend/layout/course.blade.php</url>
+          <line>28</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Frontend/courseDetails.blade.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

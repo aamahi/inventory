@@ -37,7 +37,7 @@ class ServiceController extends Controller
     }
     public function deleteService($id){
         $service = Service::find($id);
-        unlink('uploads/service/'.$$service->photo);
+        unlink('uploads/service/'.$service->photo);
         $service->delete();
         return redirect()->back();
     }

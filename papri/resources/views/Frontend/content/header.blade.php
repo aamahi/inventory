@@ -53,11 +53,9 @@
                         <li>
                             <div class="link font-per">Course<i class="fa fa-chevron-down"></i></div>
                             <ul class="submenu font-per">
-                                <li><a href="course.html">Basic Computer Concept</a></li>
-                                <li><a href="course.html">Advanced Office Application</a></li>
-                                <li><a href="course.html">Professional Graphics Desing</a></li>
-                                <li><a href="course.html">Basic Web Desing</a></li>
-                                <li><a href="course.html">Wordpress Development</a></li>
+                                @foreach(\App\Model\Course::all() as $course)
+                                    <li><a href="{{route('courseDetails',$course->id)}}">{{$course->title}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li>
@@ -95,11 +93,9 @@
                         </li>
                         <li class="fc-red"><a href="{{route('frontendHome')}}">Course<i class="fa fa-angle-down" ></i> </a>
                             <ul class="sub-menu">
-                                <li><a href="course.html">Basic Computer Concept</a></li>
-                                <li><a href="course.html">Advanced Office Application</a></li>
-                                <li><a href="course.html">Professional Graphics Desing</a></li>
-                                <li><a href="course.html">Basic Web Desing</a></li>
-                                <li><a href="course.html">Wordpress Development</a></li>
+                                @foreach(\App\Model\Course::all() as $course)
+                                    <li><a href="{{route('courseDetails',$course->id)}}">{{$course->title}}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="fc-per hav-sub"><a href="{{route('frontendContact')}}">Our Clint</a></li>

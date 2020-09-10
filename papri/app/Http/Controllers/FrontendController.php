@@ -6,6 +6,7 @@ use App\Model\About;
 use App\Model\CeoMessage;
 use App\Model\Clint;
 use App\Model\Contract;
+use App\Model\Course;
 use App\Model\Service;
 use App\Model\Setting;
 use App\Model\Slider;
@@ -15,11 +16,12 @@ use Illuminate\Http\Request;
 class FrontendController extends Controller
 {
     public function index(){
-        $services = Service::latest()->paginate(4);
+        $courses = Course::select('id','title','details','module','pre','photo')->paginate(4);
+        $services = Service::select('id','title','details','photo')->paginate(4);
         $clints = Clint::latest()->get();
         $sliders = Slider::latest()->get();
         $ceo = CeoMessage::find(1);
-        return view('Frontend.home',compact('sliders','clints','ceo','services'));
+        return view('Frontend.home',compact('sliders','courses','clints','ceo','services'));
     }
     public function contact(){
         $info = Setting::find(1);
@@ -47,5 +49,9 @@ class FrontendController extends Controller
     public function serviceDetails($id){
         $service = Service::find($id);
         return view('Frontend.serviceDetails',compact('service'));
+    }
+    public function courseDetails($id){
+        $course = Course::find($id);
+        return view('Frontend.courseDetails',compact('course'));
     }
 }

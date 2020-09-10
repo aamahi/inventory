@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <section class="card">
                         <header class="text-center card-header bg-success text-white font-weight-bold">
-                            Add New Course
+                            Edit Course
                         </header>
                         <div class="card-body">
                             @if($errors->any())
@@ -21,18 +21,18 @@
                                 @endforeach
                             @endif
 
-                            <form method="post" action="{{route('addCourse')}}" enctype="multipart/form-data">
+                            <form method="post" action="{{route('editCourse',$course->id)}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="title" class="col-sm-2 col-form-label font-weight-bold">Course Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="title" name="title" placeholder="Course Title">
+                                        <input type="text" class="form-control" id="title" name="title" value="{{$course->title}}" placeholder="Course Title">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="details" class="col-sm-2 col-form-label font-weight-bold">Course Details</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control" name="details" style="height: 129px;"> Course Details....... </textarea>
+                                        <textarea class="form-control" name="details" style="height: 129px;">{{$course->details}} </textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -40,9 +40,7 @@
                                     <div class="col-sm-10">
                                         <div class="card-body">
                                             <textarea class="summernote" name="module">
-                                                <ul>
-                                                    <li class="kin-top-info">Hello Course Module One </li>
-                                                </ul>
+                                                {!! $course->module !!}
                                             </textarea>
                                         </div>
                                     </div>
@@ -50,7 +48,13 @@
                                 <div class="form-group row">
                                     <label for="pre" class="col-sm-2 col-form-label font-weight-bold">Pre Requirment</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="pre" name="pre" placeholder="Pre Requirment">
+                                        <input type="text" class="form-control" id="pre" value="{{$course->pre}}" name="pre" placeholder="Pre Requirment">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label font-weight-bold">Old Photo</label>
+                                    <div class="col-sm-10">
+                                        <img src="{{asset('uploads/course/'.$course->photo)}}" width="230">
                                     </div>
                                 </div>
                                 <div class="form-group row">

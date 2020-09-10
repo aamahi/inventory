@@ -18,6 +18,7 @@ Route::get('/contact','FrontendController@contact')->name('frontendContact');
 Route::post('/contact','FrontendController@senContact');
 Route::get('/about','FrontendController@about')->name('frontendAbout');
 Route::get('/service/details/{id}','FrontendController@serviceDetails')->name('serviceDetails');
+Route::get('/course/details/{id}','FrontendController@courseDetails')->name('courseDetails');
 
 Auth::routes();
 
@@ -41,8 +42,13 @@ Route::prefix('admin')->group(function (){
     Route::get('/about','BackendController@about')->name('about');
     Route::post('/about','BackendController@aboutUpdate');
 
+    Route::get('/course','CourseController@Course')->name('Course');
     Route::get('add/course','CourseController@addCourse')->name('addCourse');
     Route::post('add/course','CourseController@addCoursePro');
+    Route::get('delete/Course/{id}','CourseController@deleteCourse')->name('deleteCourse');
+    Route::get('edit/Course/{id}','CourseController@editCourse')->name('editCourse');
+    Route::get('edit/Course/{id}','CourseController@editCourse')->name('editCourse');
+    Route::post('edit/Course/{id}','CourseController@updateCourse');
 //    Route::post('/course','CourseController@addCourse');
 
 

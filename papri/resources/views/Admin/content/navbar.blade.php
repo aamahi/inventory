@@ -14,7 +14,8 @@
                     <span>Course</span>
                 </a>
                 <ul class="sub">
-{{--                    <li><a  href="{{route('addCours')}}">Add New Course</a></li>--}}
+                    <li><a  href="{{route('Course')}}">All Course</a></li>
+                    <li><a  href="{{route('addCourse')}}">Add New Course</a></li>
                 </ul>
             </li>
             <li class="sub-menu">
