@@ -59,4 +59,7 @@ Route::prefix('admin')->group(function (){
     Route::get('edit/Service/{id}','ServiceController@editService')->name('editService');
     Route::get('edit/Service/{id}','ServiceController@editService')->name('editService');
     Route::post('edit/Service/{id}','ServiceController@updateService');
+
+
+    Route::get('/delete/contact/{id}','BackendController@deleteContact')->name('deleteContact');
 });

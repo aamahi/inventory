@@ -31,7 +31,7 @@
                                             @if($contract->status==0)
                                                 <a href="{{route('contactSeen',$contract->id)}}" class="btn btn-info btn-sm text-white">New</a>
                                             @endif
-                                            <a href="" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i></a>
+                                            <a href="{{route('deleteContact',$contract->id)}}" class="btn btn-sm btn-danger delete"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -28,6 +28,7 @@
     <link href="{{asset('frontend/css/owl.theme.css')}}" rel="stylesheet">
     <!--Animate css-->
     <link href="{{asset('frontend/css/animate.css')}}" rel="stylesheet">
+    <link href="{{asset('css/toaster.css')}}" rel="stylesheet">
     <!--Main Stylesheet -->
     <link href="{{asset('frontend/style.css')}}" rel="stylesheet">
     <!--Responsive Stylesheet -->
@@ -86,6 +87,7 @@
 <script src="{{asset('frontend/js/mailchimp.js')}}"></script>
 <!-- === Mobile menu  js === -->
 <script src="{{asset('frontend/js/mobile-menu.js')}}"></script>
+<script src="{{asset('js/toaster.js')}}"></script>
 <!-- === Main  js === -->
 <script src="{{asset('frontend/js/main.js')}}"></script>
 
@@ -135,6 +137,32 @@
         });
     });
 </script>
+
+<script>
+    @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type', 'info') }}";
+    switch(type){
+        case 'info':
+            toastr.info("{{ Session::get('message') }}");
+            break;
+
+        case 'warning':
+            toastr.warning("{{ Session::get('message') }}");
+            break;
+
+        case 'success':
+            toastr.success("{{ Session::get('message') }}");
+            break;
+
+        case 'error':
+            toastr.error("{{ Session::get('message') }}");
+            break;
+    }
+    @endif
+</script>
+
+
+
 
 
 

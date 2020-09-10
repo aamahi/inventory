@@ -26,6 +26,7 @@ class FrontendController extends Controller
     public function contact(){
         $info = Setting::find(1);
         return view('Frontend.contact',compact('info'));
+
     }
     public function senContact(Request $request){
         $this->validate($request,[
@@ -40,8 +41,14 @@ class FrontendController extends Controller
         $contract['message'] = $request->message;
         $contract['created_at'] = Carbon::now();
         Contract::insert($contract);
-        return redirect()->back();
+        $notification = array(
+            'message' => "Thanks for Contact us !",
+            'alert-type' => 'warning'
+        );
+        return redirect()->back()->with($notification);
     }
+
+
     public function about(){
         $about = About::find(1);
         return view('Frontend.about',compact('about'));

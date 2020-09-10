@@ -18,6 +18,7 @@
 
     <!--right slidebar-->
     <link href="{{asset('admin/css/slidebars.css')}}" rel="stylesheet">
+    <link href="{{asset('css/toaster.css')}}" rel="stylesheet">
 
 
     <!--  summernote -->
@@ -64,6 +65,8 @@
     <script src="{{asset('admin/js/slidebars.min.js')}}"></script>
     <script src="{{asset('admin/js/jquery.nicescroll.js')}}" type="text/javascript"></script>
     <script src="{{asset('admin/js/respond.min.js')}}" ></script>
+    <script src="{{asset('js/toaster.js')}}" ></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!--summernote-->
     <script src="{{asset('admin/assets/summernote/dist/summernote.min.js')}}"></script>
@@ -88,6 +91,46 @@
       });
 
   </script>
+  <script>
+      $('.delete').on('click', function (event) {
+          event.preventDefault();
+          const url = $(this).attr('href');
+          swal({
+              title: 'Are you sure?',
+              text: 'This record and it`s details will be permanantly deleted!',
+              icon: 'warning',
+              buttons: ["Cancel", "Yes!"],
+          }).then(function(value) {
+              if (value) {
+                  window.location.href = url;
+              }
+          });
+      });
+  </script>
+  <script>
+      @if(Session::has('message'))
+      var type = "{{ Session::get('alert-type', 'info') }}";
+      switch(type){
+          case 'info':
+              toastr.info("{{ Session::get('message') }}");
+              break;
+
+          case 'warning':
+              toastr.warning("{{ Session::get('message') }}");
+              break;
+
+          case 'success':
+              toastr.success("{{ Session::get('message') }}");
+              break;
+
+          case 'error':
+              toastr.error("{{ Session::get('message') }}");
+              break;
+      }
+      @endif
+  </script>
+
+
 
   </body>
 </html>

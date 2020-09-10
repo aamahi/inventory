@@ -98,7 +98,11 @@ class BackendController extends Controller
         $contract  = Contract::find($id);
         $contract->status = 1;
         $contract->save();
-        return redirect()->back();
+        $notification = array(
+            'message' => "Contact Messge Seen !",
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function about(){
@@ -132,5 +136,15 @@ class BackendController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function deleteContact($id){
+        Contract::find($id)->delete();
+        $notification = array(
+            'message' => "Contact Deleted !",
+            'alert-type' => 'error'
+        );
+        return redirect()->back()->with($notification);
+
     }
 }
